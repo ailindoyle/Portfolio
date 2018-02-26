@@ -5,3 +5,29 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
+/*NAV BAR*/
+
+nav {
+    background-color: #fdfaf5;
+}
+
+li {
+    float: left;
+    list-style: none;
+    margin-right: 25px;
+    font-size: 1.2rem;
+}
+
+.nav-bar {
+    float: left;
+}
+
+.logo {
+    float: right;
+    margin-right: 50px;
+}
+
+.logo img {
+    height: 60px;
+}
