@@ -4,12 +4,20 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    margin: 0px;
 }
 
 /*NAV BAR*/
 
-nav {
+.navbar {
+    overflow: auto;
     background-color: #fdfaf5;
+    position: fixed;
+}
+
+.menu {
+    float: left;
+    margin: auto;
 }
 
 li {
@@ -17,15 +25,28 @@ li {
     list-style: none;
     margin-right: 25px;
     font-size: 1.2rem;
+    color: #3c5551;
+    padding: 7px;
+    border-radius: 5px;
 }
 
-.nav-bar {
-    float: left;
+li:hover {
+    /*transition-duration: 0.5s;*/
+    background-color: #3c5551;
+    color: #fdfaf5;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .logo {
     float: right;
     margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.logo:hover {
+    cursor: pointer;
 }
 
 .logo img {
