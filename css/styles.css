@@ -27,7 +27,7 @@ body {
 .menu {
     float: left;
     margin: auto;
-    vertical-align: middle;
+    padding-top: 8px;
 }
 
 .navigation li {
@@ -118,3 +118,20 @@ footer {
     transition: all 0.5s ease-in-out;
 }
 
+/*TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1150px) {
+
+    .container {
+        width: 700px;
+    }
+}
+
+/*PHONE BREAKPOINT*/
+
+@media screen and (max-width: 750px) {
+
+    .container {
+        width: 480px;
+    }
+}
