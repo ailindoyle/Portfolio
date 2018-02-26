@@ -30,6 +30,15 @@ body {
     padding-top: 8px;
 }
 
+a {
+    text-decoration: none;
+    color: #3c5551;
+}
+
+a:hover {
+    color: #fdfaf5;
+}
+
 .navigation li {
     float: left;
     list-style: none;
