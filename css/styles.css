@@ -7,17 +7,25 @@ body {
     margin: 0px;
 }
 
+.container{
+    margin: 0 auto;
+    width: 1000px;
+    overflow: auto;
+}
 /*NAV BAR*/
 
 .navbar {
     overflow: auto;
     background-color: #fdfaf5;
-    position: fixed;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*width: 100%;*/
 }
 
 .menu {
     float: left;
     margin: auto;
+    vertical-align: middle;
 }
 
 li {
