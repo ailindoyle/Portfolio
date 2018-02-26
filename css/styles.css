@@ -13,6 +13,7 @@ body {
     width: 1000px;
     overflow: auto;
 }
+
 /*NAV BAR*/
 
 .navbar {
@@ -39,7 +40,6 @@ body {
 }
 
 .navigation li:hover {
-    /*transition-duration: 0.5s;*/
     background-color: #3c5551;
     color: #fdfaf5;
     cursor: pointer;
@@ -61,13 +61,37 @@ body {
     height: 60px;
 }
 
+/*FOOTER */
+
 footer {
     background-color: #36494d;
     color: #e1deca;
 }
 
-footer h2 {
+.footer {
+    margin: 0 auto;
     text-align: center;
+}
+
+.hire-link {
+    padding: 30px 0;
+}
+
+.hire-link button {
+    background-color: #fdfaf5;
+    color: #36494d;
+    border: 1px solid #fdfaf5;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    padding: 15px 20px;
+}
+
+.hire-link button:hover {
+    background-color: #3e5944;
+    color: #fdfaf5;
+    border: 1px solid #fdfaf5;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .footer-contact {
@@ -86,3 +110,11 @@ footer h2 {
     padding: 7px;
     border-radius: 5px;
 }
+
+.media li:hover {
+    background-color: #e1deca;
+    color: #36494d;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
