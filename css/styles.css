@@ -5,6 +5,7 @@
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0px;
+    color: #3c5551;
 }
 
 .container{
@@ -28,17 +29,16 @@ body {
     vertical-align: middle;
 }
 
-li {
+.navigation li {
     float: left;
     list-style: none;
     margin-right: 25px;
     font-size: 1.2rem;
-    color: #3c5551;
     padding: 7px;
     border-radius: 5px;
 }
 
-li:hover {
+.navigation li:hover {
     /*transition-duration: 0.5s;*/
     background-color: #3c5551;
     color: #fdfaf5;
@@ -59,4 +59,30 @@ li:hover {
 
 .logo img {
     height: 60px;
+}
+
+footer {
+    background-color: #36494d;
+    color: #e1deca;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+.footer-contact {
+    overflow: auto;
+}
+
+.email {
+    float: left;
+}
+
+.media li {
+    float: right;
+    list-style: none;
+    margin-right: 25px;
+    font-size: 1.2rem;
+    padding: 7px;
+    border-radius: 5px;
 }
