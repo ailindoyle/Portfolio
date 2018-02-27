@@ -50,19 +50,23 @@ main {
 }
 
 .navigation li:hover {
-    background-color: #3c5551;
+    background-color: #36494d;
     transition: all 0.5s ease-in-out;
 }
 
 .navigation a,
 .hire-link a {
-    color: #3c5551;
+    color: #36494d;
 }
 
 .navigation a:hover,
 .hire-link a:hover {
     color: #fdfaf5;
     cursor: pointer;
+}
+
+.dropdown {
+    display: none;
 }
 
 .logo {
@@ -94,7 +98,7 @@ footer {
 }
 
 .hire-link {
-    padding: 60px 0 40px;
+    padding: 80px 0 40px;
 }
 
 .hire-link button {
@@ -121,31 +125,30 @@ footer {
 
 .email {
     float: left;
+    padding-top: 15px;
 }
 
 .media li {
     float: right;
     list-style: none;
-    margin-right: 25px;
-    /*font-size: 1.2rem;*/
+    margin-right: 15px;
     padding: 5px;
+
+}
+
+.media img {
+    /*background-color: #fdfaf5;*/
+    border: 2px solid transparent;
+    width: 48px;
+    height: 48px;
     border-radius: 5px;
 }
 
-.media li:hover {
-    background-color: #fdfaf5;
+.media img:hover {
+    /*background-color: transparent;*/
+    border: 2px solid #fdfaf5;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
-}
-
-.media a {
-    color: #fdfaf5;
-    width: 20px;
-    height: 20px;
-}
-
-.media a:hover {
-    color: #36494d;
 }
 
 /*LARGE TABLET BREAKPOINT*/
@@ -179,7 +182,58 @@ footer {
         width: 85%;
     }
 
+    .menu {
+        padding: 15px 35px;
+    }
 
+    .navigation {
+        display: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        background-color: #fdfaf5;
+        color: #36494d;
+        border: 2px solid #36494d;
+        border-radius: 5px;
+        padding: 15px 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fdfaf5;
+        border-radius: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        min-width: 160px;
+        z-index: 5;
+    }
+
+    .dropdown-content a {
+        color: #36494d;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #36494d;
+        color: #fdfaf5;
+    }
 
     .media li {
         font-size: 1rem;
