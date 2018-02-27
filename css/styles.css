@@ -1,4 +1,6 @@
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -8,37 +10,34 @@ body {
     color: #3c5551;
 }
 
-.container{
+.container {
     margin: 0 auto;
-    width: 1000px;
+    width: 950px;
     overflow: auto;
+}
+
+a {
+    text-decoration: none;
 }
 
 /*NAV BAR*/
 
 .navbar {
-    overflow: auto;
+    overflow: hidden;
     background-color: #fdfaf5;
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*width: 100%;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    padding: 100px 0;
 }
 
 .menu {
     float: left;
     margin: auto;
     padding-top: 8px;
-}
-
-.menu a,
-.hire-link a {
-    text-decoration: none;
-    color: #3c5551;
-}
-
-.menu a:hover,
-.hire-link a:hover {
-    color: #fdfaf5;
 }
 
 .navigation li {
@@ -52,9 +51,18 @@ body {
 
 .navigation li:hover {
     background-color: #3c5551;
+    transition: all 0.5s ease-in-out;
+}
+
+.navigation a,
+.hire-link a {
+    color: #3c5551;
+}
+
+.navigation a:hover,
+.hire-link a:hover {
     color: #fdfaf5;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
 }
 
 .logo {
@@ -85,13 +93,13 @@ footer {
 }
 
 .hire-link {
-    padding: 30px 0;
+    padding: 30px 0 20px;
 }
 
 .hire-link button {
     background-color: #fdfaf5;
     color: #36494d;
-    border: 1px solid #fdfaf5;
+    border: 2px solid #fdfaf5;
     border-radius: 5px;
     font-size: 1.4rem;
     padding: 15px 20px;
@@ -100,13 +108,14 @@ footer {
 .hire-link button:hover {
     background-color: #36494d;
     color: #fdfaf5;
-    border: 1px solid #fdfaf5;
+    border: 2px solid #fdfaf5;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
 
 .footer-contact {
     overflow: auto;
+    padding-bottom: 20px;
 }
 
 .email {
@@ -124,25 +133,44 @@ footer {
 
 .media li:hover {
     background-color: #e1deca;
-    color: #36494d;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
 
-/*TABLET BREAKPOINT*/
+.media a {
+    color: #e1deca;
+}
 
-@media screen and (max-width: 1150px) {
+.media a:hover {
+    color: #36494d;
+}
+
+/*LARGE TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1100px) and (min-width: 800px) {
 
     .container {
-        width: 700px;
+        width: 85%;
     }
+
+}
+
+/*SMALL TABLET BREAKPOINT*/
+
+@media screen and (max-width: 800px) and (min-width: 650px) {
+
+    .container {
+        width: 85%;
+    }
+
 }
 
 /*PHONE BREAKPOINT*/
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 650px) {
 
     .container {
-        width: 480px;
+        width: 85%;
     }
+
 }
