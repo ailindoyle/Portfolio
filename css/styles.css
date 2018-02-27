@@ -30,12 +30,14 @@ body {
     padding-top: 8px;
 }
 
-a {
+.menu a,
+.hire-link a {
     text-decoration: none;
     color: #3c5551;
 }
 
-a:hover {
+.menu a:hover,
+.hire-link a:hover {
     color: #fdfaf5;
 }
 
