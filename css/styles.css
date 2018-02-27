@@ -83,7 +83,8 @@ main {
 /*FOOTER */
 
 footer {
-    background-color: #36494d;
+    background-image: url("file:///Users/caitlindoyle/Sites/academy-php7/html/portfolio/images/forestabove.jpg");
+    background-size: cover;
     color: #e1deca;
 }
 
@@ -93,7 +94,7 @@ footer {
 }
 
 .hire-link {
-    padding: 30px 0 20px;
+    padding: 60px 0 40px;
 }
 
 .hire-link button {
@@ -106,7 +107,7 @@ footer {
 }
 
 .hire-link button:hover {
-    background-color: #36494d;
+    background-color: transparent;
     color: #fdfaf5;
     border: 2px solid #fdfaf5;
     cursor: pointer;
@@ -115,7 +116,7 @@ footer {
 
 .footer-contact {
     overflow: auto;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .email {
@@ -168,9 +169,17 @@ footer {
 /*PHONE BREAKPOINT*/
 
 @media screen and (max-width: 650px) {
+    body {
+        font-size: 0.95rem;
+    }
 
     .container {
         width: 85%;
     }
 
+
+
+    .media li {
+        font-size: 1rem;
+    }
 }
