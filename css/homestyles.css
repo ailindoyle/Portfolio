@@ -10,8 +10,7 @@
 }
 
 .hero-box {
-    margin: 20px;
-    padding: 40px;
+    margin: 60px 30px 40px;
 }
 
 .picture img {
@@ -23,8 +22,8 @@
     font-size: 1.7rem;
 }
 
-/*.description p {*/
-    /*color: #fdfaf5;*/
+/*.description h3 {*/
+    /*padding-top: 10px;*/
 /*}*/
 
 #summary {
@@ -79,6 +78,15 @@
 /*LARGE TABLET BREAKPOINT*/
 
 @media screen and (max-width: 1100px) and (min-width: 800px) {
+
+    .description {
+        font-size: 1.4rem;
+    }
+
+    .description h3 {
+        padding-top: 20px;
+        color: #fdfaf5;
+    }
 
 }
 
