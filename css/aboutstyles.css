@@ -6,6 +6,13 @@
     color: #fdfaf5;
 }
 
+#banner {
+    background-color: #9da993;
+    color: #36494d;
+}
+
 .about-me {
     text-align: center;
+    font-size: 1.5rem;
 }
+
