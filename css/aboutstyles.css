@@ -35,3 +35,15 @@
 .about-me {
     margin-top: 100px;
 }
+
+#skills {
+    background-color: #36494d;
+    color: #fdfaf5;
+}
+
+.skills-header {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.5rem;
+}
+
