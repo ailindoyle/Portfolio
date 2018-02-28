@@ -69,9 +69,6 @@
 .project {
     background-color: #fdfaf5;
     color: #36494d;
-}
-
-.project {
     margin: 10px;
 }
 
@@ -87,8 +84,19 @@
 
     .description {
         font-size: 2rem;
-        padding: 20px 0;
      }
+
+    .tb-col-2 {
+        width: 50%;
+    }
+
+    .featured-project-one {
+        display: none;
+    }
+
+    .project {
+        margin: 15px;
+    }
 
 }
 
@@ -100,6 +108,17 @@
         font-size: 1.7rem;
     }
 
+    .tb-col-2 {
+        width: 50%;
+    }
+
+    .featured-project-one {
+        display: none;
+    }
+
+    .project {
+        margin: 15px;
+    }
 }
 
 /*PHONE BREAKPOINT*/
@@ -108,7 +127,18 @@
 
     .description {
         font-size: 1.5rem;
-        text-align: center;
+    }
+
+    .mb-col-1 {
+        width: 100%;
+    }
+
+    .featured-project-one {
+        display: none;
+    }
+
+    .featured-project-two {
+        display: none;
     }
 
 }
