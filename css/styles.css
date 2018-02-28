@@ -21,8 +21,8 @@ a {
     color: #ffffff;
 }
 
-main {
-    padding: 100px 0;
+.main {
+    padding: 100px 0 50px;
 }
 
 /*NAV BAR*/
