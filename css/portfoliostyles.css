@@ -1,0 +1,36 @@
+
+.current {
+    background-color: #36494d;
+}
+
+.current a {
+    color: #fdfaf5;
+}
+
+#full-portfolio {
+    background-color: #36494d;
+    color: #fdfaf5;
+}
+
+.col-3 {
+    float: left;
+    width: 33.3%;
+}
+
+.project img {
+    width: 100%;
+}
+
+.project-links {
+    padding-bottom: 60px;
+}
+
+.project {
+    background-color: #fdfaf5;
+    color: #36494d;
+    margin: 10px;
+}
+
+.project p {
+    padding: 0 10px 15px;
+}
