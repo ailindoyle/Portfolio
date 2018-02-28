@@ -24,7 +24,22 @@
     /*color: #fdfaf5;*/
 /*}*/
 
+#summary {
+    background-color: #9da993;
+    color: #fdfaf5;
+}
+
 #summary p {
     font-size: 1.2rem;
     padding: 50px 0;
+}
+
+#featured {
+    background-color: #fdfaf5 ;
+    /*color: #9da993;*/
+}
+
+.col-4 {
+    width: 25%;
+    float: left;
 }
