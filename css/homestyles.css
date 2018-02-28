@@ -1,3 +1,11 @@
+.current {
+    background-color: #36494d;
+}
+
+.current a {
+    color: #fdfaf5;
+}
+
 #hero {
     background-image: url("file:///Users/caitlindoyle/Sites/academy-php7/html/portfolio/images/forestbackground.jpeg");
     background-size: cover;
