@@ -5,10 +5,13 @@
 }
 
 .col-2 {
-    width: 45%;
+    width: 50%;
+    float: left;
+}
+
+.hero-box {
     margin: 20px;
     padding: 40px;
-    float: left;
 }
 
 .picture img {
