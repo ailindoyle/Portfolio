@@ -73,3 +73,23 @@
 .project p {
     padding: 0 10px 15px;
 }
+
+/*MEDIA QUERIES*/
+
+/*LARGE TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+
+}
+
+/*SMALL TABLET BREAKPOINT*/
+
+@media screen and (max-width: 800px) and (min-width: 650px) {
+
+}
+
+/*PHONE BREAKPOINT*/
+
+@media screen and (max-width: 650px) {
+
+}
