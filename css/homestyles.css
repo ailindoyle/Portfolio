@@ -39,6 +39,12 @@
     color: #fdfaf5;
 }
 
+.featured-header {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.5rem;
+}
+
 .col-3 {
     float: left;
     width: 33.3%;
@@ -48,6 +54,10 @@
     width: 100%;
 }
 
+.featured-project-links {
+    padding-bottom: 60px;
+}
+
 .project {
     background-color: #fdfaf5;
     color: #36494d;
@@ -55,4 +65,8 @@
 
 .project {
     margin: 10px;
+}
+
+.project p {
+    padding: 0 10px 15px;
 }
