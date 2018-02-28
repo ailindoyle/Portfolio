@@ -1,5 +1,5 @@
-.hero {
-    background-image: url("file:///Users/caitlindoyle/Sites/academy-php7/html/portfolio/images/forestbackground.jpg");
+#hero {
+    background-image: url("file:///Users/caitlindoyle/Sites/academy-php7/html/portfolio/images/forestbackground.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -19,3 +19,7 @@
     text-align: right;
     font-size: 1.7rem;
 }
+
+/*.description p {*/
+    /*color: #fdfaf5;*/
+/*}*/
