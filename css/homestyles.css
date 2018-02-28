@@ -35,15 +35,24 @@
 }
 
 #featured {
-    background-color: #fdfaf5 ;
-    /*color: #9da993;*/
+    background-color: #36494d;
+    color: #fdfaf5;
 }
 
-.col-4 {
-    width: 25%;
+.col-3 {
     float: left;
+    width: 33.3%;
 }
 
 .featured-project-links img {
     width: 100%;
+}
+
+.project {
+    background-color: #fdfaf5;
+    color: #36494d;
+}
+
+.project {
+    margin: 10px;
 }
