@@ -43,3 +43,7 @@
     width: 25%;
     float: left;
 }
+
+.featured-project-links img {
+    width: 100%;
+}
