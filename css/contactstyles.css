@@ -1,0 +1,62 @@
+.current {
+    background-color: #36494d;
+}
+
+.current a {
+    color: #fdfaf5;
+}
+
+#banner {
+    background-color: #e1deca;
+    color: #722a19;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#contact-info {
+    background-color: #fdfaf5;
+    color: #36494d;
+}
+
+.contact {
+    text-align: center;
+}
+
+h2 {
+    margin: 50px 0;
+}
+
+.social-media {
+    padding: 10px;
+}
+
+.social-media li {
+    list-style: none;
+    display: inline-block;
+    margin: 15px;
+    padding: 5px;
+}
+
+.social-media img {
+    border: 2px solid transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.social-media img:hover {
+    border: 2px solid #36494d;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+/*PHONE BREAKPOINT */
+
+@media screen and (max-width: 650px) {
+
+    #banner {
+        margin-top: 0;
+    }
+
+}
