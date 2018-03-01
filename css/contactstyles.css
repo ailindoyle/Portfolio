@@ -1,0 +1,48 @@
+.current {
+    background-color: #36494d;
+}
+
+.current a {
+    color: #fdfaf5;
+}
+
+#banner {
+    background-color: #e1deca;
+    color: #722a19;
+    font-size: 2rem;
+}
+
+.contact header {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 50px;
+}
+
+#contact-info {
+    background-color: #fdfaf5;
+    color: #36494d;
+}
+
+.contact {
+    text-align: center;
+}
+
+.social-media li {
+    list-style: none;
+    margin: 15px;
+    padding: 5px;
+}
+
+.social-media img {
+    border: 2px solid transparent;
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+}
+
+.social-media img:hover {
+    border: 2px solid #fdfaf5;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
