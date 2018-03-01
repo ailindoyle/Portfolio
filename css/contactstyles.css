@@ -9,13 +9,9 @@
 #banner {
     background-color: #e1deca;
     color: #722a19;
-    font-size: 2rem;
-}
-
-.contact header {
-    text-align: center;
     font-size: 1.5rem;
-    margin-top: 50px;
+    text-align: center;
+    margin-top: 25px;
 }
 
 #contact-info {
@@ -27,21 +23,34 @@
     text-align: center;
 }
 
+h2 {
+    margin: 50px 0 0;
+}
+
+h3 {
+    margin: 50px 0;
+}
+
+.social-media {
+    padding: 10px;
+}
+
 .social-media li {
     list-style: none;
+    display: inline-block;
     margin: 15px;
     padding: 5px;
 }
 
 .social-media img {
     border: 2px solid transparent;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 5px;
 }
 
 .social-media img:hover {
-    border: 2px solid #fdfaf5;
+    border: 2px solid #36494d;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
