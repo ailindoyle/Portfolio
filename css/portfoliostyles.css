@@ -1,0 +1,49 @@
+.full-portfolio {
+    background-color: #9da993;
+    color: #fdfaf5;
+}
+
+.portfolio-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 100px;
+    color: #722a19;
+}
+
+.project img {
+    width: 100%;
+}
+
+.project-links {
+    padding-bottom: 60px;
+}
+
+.project {
+    background-color: #fdfaf5;
+    color: #36494d;
+    margin: 20px;
+}
+
+.project p {
+    padding: 0 10px 15px;
+}
+
+/*MEDIA QUERIES*/
+
+/*TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1100px) and (min-width: 650px) {
+
+
+
+}
+
+/*PHONE BREAKPOINT*/
+
+@media screen and (max-width: 650px) {
+
+    .mb-col-1 {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,277 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+    color: #3c5551;
+}
+
+.container {
+    margin: 0 auto;
+    width: 950px;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+li {
+    list-style: none;
+}
+
+.main {
+    padding: 100px 0 50px;
+}
+
+/*NAV BAR*/
+
+.navbar {
+    overflow: hidden;
+    background-color: #fdfaf5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.menu {
+    float: left;
+    margin: auto;
+    padding-top: 8px;
+}
+
+.navigation li {
+    float: left;
+    margin-right: 25px;
+    font-size: 1.2rem;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.navigation li:hover {
+    background-color: #36494d;
+    transition: all 0.5s ease-in-out;
+}
+
+.navigation a,
+.hire-link a {
+    color: #36494d;
+}
+
+.navigation a:hover,
+.hire-link a:hover {
+    color: #fdfaf5;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+}
+
+.logo {
+    float: right;
+    margin: 10px 50px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.current {
+    background-color: #36494d;
+}
+
+.current a {
+    color: #fdfaf5;
+}
+
+/*GENERIC MAIN STYLING*/
+
+.col-3 {
+    float: left;
+    width: 33.3%;
+}
+
+.col-4 {
+    float: left;
+    width: 25%;
+}
+
+/*FOOTER */
+
+footer {
+    background-color: #9da993;
+    background-image: url("../images/forestabove.jpg");
+    background-size: cover;
+    color: #fdfaf5;
+}
+
+.contact-details {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hire-link {
+    padding: 80px 0 40px;
+}
+
+.hire-link button {
+    background-color: #fdfaf5;
+    color: #36494d;
+    border: 2px solid #fdfaf5;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    padding: 15px 20px;
+}
+
+.hire-link button:hover {
+    background-color: transparent;
+    color: #fdfaf5;
+    border: 2px solid #fdfaf5;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.footer-contact {
+    overflow: auto;
+    padding-bottom: 40px;
+}
+
+.email {
+    float: left;
+    padding-top: 15px;
+}
+
+.media li {
+    float: right;
+    margin-right: 15px;
+    padding: 5px;
+}
+
+.media img {
+    border: 2px solid transparent;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+}
+
+.media img:hover {
+    border: 2px solid #fdfaf5;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+/*TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1100px) and (min-width: 650px) {
+
+    .container {
+        width: 85%;
+    }
+
+    .tb-col-2 {
+        width: 50%;
+    }
+
+}
+
+/*PHONE BREAKPOINT*/
+
+@media screen and (max-width: 650px) {
+
+    .mb-col-1 {
+        width: 100%;
+        float: none;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        width: 85%;
+    }
+
+    main {
+        padding: 30px 0 80px;
+    }
+
+    .navbar {
+        position: static;
+    }
+
+    .menu {
+        padding: 15px 35px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown div {
+        padding: 7px;
+        border: 1px solid #fdfaf5;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+
+    .dropdown a {
+        color: #36494d;
+    }
+
+    .current a {
+        color: #fdfaf5;
+    }
+
+    .logo {
+        margin: 30px 40px;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .email {
+        width: 100%;
+        padding-bottom: 30px;
+        font-size: 1.2rem;
+    }
+
+    .media {
+        width: 100%;
+        padding: 0;
+    }
+
+    .media li {
+        width: 20%;
+        float: none;
+        list-style: none;
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+    .media img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .media img:hover {
+        border: none;
+        cursor: pointer;
+    }
+
+}
