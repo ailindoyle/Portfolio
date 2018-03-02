@@ -86,6 +86,14 @@ li {
     height: 60px;
 }
 
+.current {
+    background-color: #36494d;
+}
+
+.current a {
+    color: #fdfaf5;
+}
+
 /*FOOTER */
 
 footer {
@@ -162,6 +170,7 @@ footer {
 /*PHONE BREAKPOINT*/
 
 @media screen and (max-width: 650px) {
+
     body {
         font-size: 0.95rem;
     }
