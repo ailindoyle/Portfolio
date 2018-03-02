@@ -102,6 +102,11 @@ li {
     width: 33.3%;
 }
 
+.col-4 {
+    float: left;
+    width: 25%;
+}
+
 /*FOOTER */
 
 footer {
@@ -183,6 +188,11 @@ footer {
 
 @media screen and (max-width: 650px) {
 
+    .mb-col-1 {
+        width: 100%;
+        float: none;
+    }
+
     body {
         font-size: 0.95rem;
     }
@@ -240,10 +250,6 @@ footer {
 
     .logo img {
         height: 100px;
-    }
-
-    .mb-col-1 {
-        width: 100%;
     }
 
     .email {

@@ -10,11 +10,6 @@
     color: #722a19;
 }
 
-.col-3 {
-    float: left;
-    width: 33.3%;
-}
-
 .project img {
     width: 100%;
 }
@@ -37,11 +32,9 @@
 
 /*TABLET BREAKPOINT*/
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) and (min-width: 650px) {
 
-    .tb-col-2 {
-        width: 50%;
-    }
+
 
 }
 
