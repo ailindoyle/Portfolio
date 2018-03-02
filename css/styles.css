@@ -233,15 +233,8 @@ footer {
         color: #36494d;
     }
 
-    .dropdown a:hover {
+    .current a {
         color: #fdfaf5;
-    }
-
-    .dropdown div:hover {
-        border: 1px solid #36494d;
-        background-color: #36494d;
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
     }
 
     .logo {
