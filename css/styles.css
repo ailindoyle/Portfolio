@@ -96,7 +96,6 @@ li {
 
 /*GENERIC MAIN STYLING*/
 
-
 .col-3 {
     float: left;
     width: 33.3%;
@@ -111,7 +110,7 @@ li {
 
 footer {
     background-color: #9da993;
-    background-image: url("images/forestabove.jpg");
+    background-image: url("../images/forestabove.jpg");
     background-size: cover;
     color: #fdfaf5;
 }

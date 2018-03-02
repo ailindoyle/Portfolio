@@ -1,6 +1,6 @@
 .hero {
     background-color: #36494d;
-    background-image: url("images/forestbackground.jpeg");
+    background-image: url("../images/forestbackground.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
