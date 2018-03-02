@@ -1,4 +1,4 @@
-#banner {
+.banner {
     background-color: #e1deca;
     color: #722a19;
 }
@@ -9,7 +9,7 @@
     margin-top: 50px;
 }
 
-#self-description {
+.self-description {
     background-color: #fdfaf5;
     color: #36494d;
 }
@@ -25,7 +25,7 @@
     width: 250px;
 }
 
-#skills {
+.skills {
     background-color: #36494d;
     color: #fdfaf5;
 }

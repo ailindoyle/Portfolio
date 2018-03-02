@@ -1,4 +1,4 @@
-#banner {
+.banner {
     background-color: #e1deca;
     color: #722a19;
     font-size: 1.5rem;
@@ -6,7 +6,7 @@
     margin-top: 25px;
 }
 
-#contact-info {
+.contact-info {
     background-color: #fdfaf5;
     color: #36494d;
 }
