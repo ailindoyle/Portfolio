@@ -110,6 +110,7 @@ li {
 /*FOOTER */
 
 footer {
+    background-color: #9da993;
     background-image: url("images/forestabove.jpg");
     background-size: cover;
     color: #fdfaf5;
