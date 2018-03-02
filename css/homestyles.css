@@ -1,4 +1,4 @@
-#hero {
+.hero {
     background-color: #36494d;
     background-image: url("images/forestbackground.jpeg");
     background-size: cover;
@@ -25,17 +25,17 @@
     margin-top; 20px;
 }
 
-#summary {
+.summary {
     background-color: #9da993;
     color: #fdfaf5;
 }
 
-#summary p {
+.summary p {
     font-size: 1.2rem;
     padding: 50px 0;
 }
 
-#featured {
+.featured {
     background-color: #36494d;
     color: #fdfaf5;
 }
