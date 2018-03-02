@@ -94,6 +94,14 @@ li {
     color: #fdfaf5;
 }
 
+/*GENERIC MAIN STYLING*/
+
+
+.col-3 {
+    float: left;
+    width: 33.3%;
+}
+
 /*FOOTER */
 
 footer {
@@ -165,6 +173,10 @@ footer {
         width: 85%;
     }
 
+    .tb-col-2 {
+        width: 50%;
+    }
+
 }
 
 /*PHONE BREAKPOINT*/
@@ -228,6 +240,10 @@ footer {
 
     .logo img {
         height: 100px;
+    }
+
+    .mb-col-1 {
+        width: 100%;
     }
 
     .email {
