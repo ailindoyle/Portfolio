@@ -1,0 +1,103 @@
+.hero {
+    background-color: #36494d;
+    background-image: url("../images/forestbackground.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-box {
+    margin: 60px 30px 40px;
+}
+
+.picture img {
+    width: 200px;
+}
+
+.description {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #722a19;
+    padding: 20px 0;
+}
+
+.description h3 {
+    color: #fdfaf5;
+    margin-top; 20px;
+}
+
+.summary {
+    background-color: #9da993;
+    color: #fdfaf5;
+}
+
+.summary p {
+    font-size: 1.2rem;
+    padding: 50px 0;
+}
+
+.featured {
+    background-color: #36494d;
+    color: #fdfaf5;
+}
+
+.featured-header {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.5rem;
+}
+
+.featured-project-links img {
+    width: 100%;
+}
+
+.featured-project-links {
+    padding-bottom: 60px;
+}
+
+.project {
+    background-color: #fdfaf5;
+    color: #36494d;
+    margin: 10px;
+}
+
+.project p {
+    padding: 0 10px 15px;
+}
+
+/*MEDIA QUERIES*/
+
+/*TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1100px) and (min-width: 650px) {
+
+    .description {
+        font-size: 1.9rem;
+     }
+
+    .featured-project-one {
+        display: none;
+    }
+
+    .project {
+        margin: 15px;
+    }
+
+}
+
+/*PHONE BREAKPOINT*/
+
+@media screen and (max-width: 650px) {
+
+    .description {
+        font-size: 1.5rem;
+    }
+
+    .featured-project-one {
+        display: none;
+    }
+
+    .featured-project-two {
+        display: none;
+    }
+
+}

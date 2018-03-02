@@ -1,0 +1,87 @@
+.banner {
+    background-color: #e1deca;
+    color: #722a19;
+}
+
+.about-me {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 50px;
+}
+
+.self-description {
+    background-color: #fdfaf5;
+    color: #36494d;
+}
+
+.description {
+    margin: 80px;
+}
+
+.picture img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 250px;
+}
+
+.skills {
+    background-color: #36494d;
+    color: #fdfaf5;
+}
+
+.skills-header {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.5rem;
+}
+
+.logo-deck {
+    overflow: auto;
+    margin: 30px 0 80px;
+}
+
+.skills-logo {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.skills-logo img {
+    height: 120px;
+}
+
+.skills-logo img:hover {
+    cursor: auto;
+}
+
+/*MEDIA QUERIES*/
+
+/*LARGE TABLET BREAKPOINT*/
+
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+
+    .lg-tb-col-3 {
+        width: 33.3%;
+    }
+
+}
+
+/*SMALL TABLET BREAKPOINT*/
+
+@media screen and (max-width: 800px) and (min-width: 650px) {
+
+    .sm-tb-col-2 {
+        width: 50%;
+    }
+
+}
+
+/*PHONE BREAKPOINT*/
+
+@media screen and (max-width: 650px) {
+
+    .picture img {
+        width: 180px;
+    }
+
+}
