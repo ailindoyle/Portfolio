@@ -41,3 +41,15 @@
         <input type="submit" value="Save">
     </form>
 </div>
+<div class="container">
+    <h2>ABOUT</h2>
+    <form method="post" action="form_insert.php">
+        Picture:<br>
+        <input type="text" name="profilePicture"><br>
+        Alternative Image Text:<br>
+        <input type="text" name="alternativeText"><br>
+        Description:<br>
+        <input type="text" name="description"><br>
+        <input type="submit" value="Save">
+    </form>
+</div>
