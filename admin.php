@@ -4,19 +4,24 @@
 
 ?>
 
-
-<form method="post" action="sql_insert.php">
-    Name:<br>
-    <input type="text" name="name"><br>
-    Date of Birth:<br>
-    <input type="date" name="dateOfBirth"><br>
-    Gender:<br>
-    <input type="radio" name="gender" value="o" checked> Other<br>
-    <input type="radio" name="gender" value="f"> Female<br>
-    <input type="radio" name="gender" value="m"> Male<br>
-    Child Name:<br>
-    <input type="text" name="childName"><br>
-    Pet Name:<br>
-    <input type="text" name="petName"><br>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Caitlin Doyle | Admin</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+<div class="container">
+    <h2 >HOME</h2>
+    <form method="post" action="sql_insert.php">
+        Header Top:<br>
+        <input type="text" name="headerTop"><br>
+        Header Bottom:<br>
+        <input type="text" name="headerBottom"><br>
+        Summary:<br>
+        <input type="text" name="summary"><br>
+        <input type="submit" value="Save">
+    </form>
+</div>
