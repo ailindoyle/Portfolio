@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO('mysql:host=127.0.0.1; dbname=testBase', 'root');
+$db = new PDO('mysql:host=127.0.0.1; dbname=doyle_portfolio', 'root');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $query= $db->prepare("INSERT INTO `adults` (`name`,`DOB`, `gender`) VALUES (:name, :dateOfBirth, :gender); 
