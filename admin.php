@@ -84,7 +84,7 @@
 <div class="container">
     <h2>CONTACT</h2>
     <form method="post" action="form_insert.php">
-        Descriptiom:<br>
+        Description:<br>
         <input type="text" name="description"><br>
         Email address:<br>
         <input type="text" name="email"><br>
