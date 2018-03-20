@@ -1,6 +1,7 @@
 <?php
 
-$db = new PDO('mysql:host=127.0.0.1; dbname=doyle_portfolio', 'root');
+include 'settings.php';
+$db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $query= $db->prepare("INSERT INTO `home` (`headerTop`,`headerBottom`, `summary`) VALUES (:headerTop, :headerBottom, :summary);");

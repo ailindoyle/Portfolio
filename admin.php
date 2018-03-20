@@ -15,7 +15,7 @@
             <p><a href="admin_home.php">Home</a></p>
             <p>About</p>
             <p>Portfolio</p>
-            <p>Contact</p>
+            <p><a href="admin_contact.php">Contact</a></p>
         </div>
     </div>
 </html>
