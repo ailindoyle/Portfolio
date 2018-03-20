@@ -2,7 +2,7 @@
 
 include 'settings.php';
 
-$connect = mysqli_connect($host,$user,$password, $db);
+$connect = mysqli_connect($host,$user,$password,$db);
 if(!$connect)
 {
     die("Connection failed: " . mysqli_connect_error());
@@ -36,4 +36,5 @@ $email = $row['email'];
             <input type="submit" value="Save">
         </form>
     </div>
+</body>
 </html>

@@ -19,5 +19,4 @@ $result = $query->fetch();
 header('Location: admin.php');
 exit();
 
-
 ?>

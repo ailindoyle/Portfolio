@@ -39,4 +39,5 @@ $summary = $row['summary'];
             <input type="submit" value="Save">
         </form>
     </div>
+</body>
 </html>
