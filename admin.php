@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <h2>HOME</h2>
-    <form method="post" action="form_insert.php">
+    <form method="post" action="home_insert.php">
         Header Top:<br>
         <input type="text" name="headerTop"><br>
         Header Bottom:<br>
@@ -27,7 +27,7 @@
 </div>
 <div class="container">
     <h2>FEATURED PROJECTS</h2>
-    <form method="post" action="form_insert.php">
+    <form method="post" action="newfile.php">
         Project Name:<br>
         <input type="text" name="projectName"><br>
         Project Description:<br>
@@ -43,7 +43,7 @@
 </div>
 <div class="container">
     <h2>ABOUT</h2>
-    <form method="post" action="form_insert.php">
+    <form method="post" action="newfile.php">
         Picture:<br>
         <input type="text" name="profilePicture"><br>
         Alternative Image Text:<br>
@@ -55,7 +55,7 @@
 </div>
 <div class="container">
     <h2>SKILLS</h2>
-    <form method="post" action="form_insert.php">
+    <form method="post" action="newfile.php">
         Skills Name:<br>
         <input type="text" name="skillsName"><br>
         Alternative Image Text:<br>
@@ -67,7 +67,7 @@
 </div>
 <div class="container">
     <h2>PORTFOLIO</h2>
-    <form method="post" action="form_insert.php">
+    <form method="post" action="newfile.php">
         Project Name:<br>
         <input type="text" name="projectName"><br>
         Project Description:<br>
@@ -83,7 +83,7 @@
 </div>
 <div class="container">
     <h2>CONTACT</h2>
-    <form method="post" action="form_insert.php">
+    <form method="post" action="newfile.php">
         Description:<br>
         <input type="text" name="description"><br>
         Email address:<br>
