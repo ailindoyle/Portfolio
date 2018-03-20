@@ -47,32 +47,32 @@ $fetchHome = mysqli_fetch_assoc($rs);
 
 
 
-<?php
 
-$featuredProjects = "SELECT * FROM `projects` ORDER BY `dateAdded` DESC LIMIT 1";
-$rs = mysqli_query($connect, $featuredProjects);
-$fetchFeatured = mysqli_fetch_assoc($rs);
-
-?>
+<!---->
+<!--$featuredProjects = "SELECT * FROM `projects` ORDER BY `dateAdded` DESC LIMIT 1";-->
+<!--$rs = mysqli_query($connect, $featuredProjects);-->
+<!--$fetchFeatured = mysqli_fetch_assoc($rs);-->
 
 
-
-<div class="container">
-    <h2>FEATURED PROJECTS</h2>
-    <form method="post" action="newfile.php">
-        Project Name:<br>
-        <input type="text" name="projectName"><br>
-        Project Description:<br>
-        <input type="text" name="projectDescription"><br>
-        Link to project:<br>
-        <input type="text" name="link"><br>
-        Image Source:<br>
-        <input type="text" name="imageSource"><br>
-        Alternative Image Text:<br>
-        <input type="text" name="alternativeText"><br>
-        <input type="submit" value="Save">
-    </form>
-</div>
+<!---->
+<!---->
+<!---->
+<!--<div class="container">-->
+<!--    <h2>FEATURED PROJECTS</h2>-->
+<!--    <form method="post" action="home_insert.php">-->
+<!--        Project Name:<br>-->
+<!--        <input type="text" name="projectName" value="--><?php //echo $fetchFeatured['projectName']?><!--"><br>-->
+<!--        Project Description:<br>-->
+<!--        <input type="text" name="projectDescription" value="--><?php //echo $fetchFeatured['projectDescription']?><!--"><br>-->
+<!--        Link to project:<br>-->
+<!--        <input type="text" name="link" value="--><?php //echo $fetchFeatured['link']?><!--"><br>-->
+<!--        Image Source:<br>-->
+<!--        <input type="text" name="imageSource" value="--><?php //echo $fetchFeatured['imageSource']?><!--"><br>-->
+<!--        Alternative Image Text:<br>-->
+<!--        <input type="text" name="alternativeText" value="--><?php //echo $fetchFeatured['alternativeText']?><!--"><br>-->
+<!--        <input type="submit" value="Save">-->
+<!--    </form>-->
+<!--</div>-->
 
 
 
