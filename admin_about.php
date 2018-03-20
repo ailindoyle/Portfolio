@@ -16,6 +16,9 @@ $photoSource = $row['photoSource'];
 $photoAlt = $row['photoAlt'];
 $description = $row['description'];
 
+$skillsQuery = "SELECT * FROM `skills` WHERE `deleted` = 0";
+$skillsrs = mysqli_query($connect, $skillsQuery);
+
 ?>
 
 <!DOCTYPE html>
@@ -35,19 +38,61 @@ $description = $row['description'];
             Alternative Image Text:<br>
             <input type="text" name="photoAlt" value="<?php echo $photoAlt?>"><br>
             Description:<br>
-            <input type="text" name="description" value="<?php echo $description?>"><br>
+            <input type="text" name="description" value="<?php echo $description?>"><br><br>
             <input type="submit" value="Save">
         </form>
     </div>
     <div class="container">
-        <h2>SKILLS</h2>
-        <form method="post" action="newfile.php">
+        <h2>MANAGE SKILLS</h2>
+            <table>
+                <tr>
+                    <th>Skill Name</th>
+                    <th>Image Source</th>
+                    <th>Alt Text</th>
+                    <th>Operations</th>
+                </tr>
+                <?php
+                do {
+                    $row = mysqli_fetch_assoc($skillsrs);
+
+                    if ($row != NULL) {
+                        $id = $row['id'];
+                        $skillName = $row['skillName'];
+                        $imageSource = $row['imageSource'];
+                        $alternative = $row['alternative'];
+
+                        ?>
+                        <form method="post" action="about_skill_manage.php">
+                            <tr>
+                                <td>
+                                    <?php echo $skillName?>
+                                </td>
+                                <td>
+                                    <?php echo $imageSource?>
+                                </td>
+                                <td>
+                                    <?php echo $alternative?>
+                                </td>
+                                <td>
+                                    <input type="submit" name="edit" value="Edit">
+                                    <input type="submit" name="delete" value="Delete">
+                                    <input type="hidden" name="id" value="<?php echo $id?>">
+                                </td>
+                            </tr>
+                        </form>
+                        <?php
+                    }
+                } while ($row != NULL);
+                ?>
+            </table>
+        <br><h3>ADD SKILL</h3>
+        <form method="post" action="about_skill_insert.php">
             Skills Name:<br>
-            <input type="text" name="skillsName"><br>
-            Alternative Image Text:<br>
-            <input type="text" name="alternativeText"><br>
+            <input type="text" name="skillName"><br>
             Image Source:<br>
             <input type="text" name="imageSource"><br>
+            Alternative Image Text:<br>
+            <input type="text" name="alternative"><br><br>
             <input type="submit" value="Save">
         </form>
     </div>

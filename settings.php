@@ -5,6 +5,6 @@ $user = "root";
 $password = "";
 $db = "doyle_portfolio";
 
-$dsn="mysql:host=".$host." dbname=".$db;
-
+$dsn="mysql:host=".$host." ; dbname=".$db;
+/*$db = new PDO('mysql:host=127.0.0.1; dbname=testBase', 'root');*/
 ?>
