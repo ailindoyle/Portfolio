@@ -2,14 +2,13 @@
 
 include 'settings.php';
 
-$connect = mysqli_connect($host,$user,$password,$db);
-if(!$connect)
-{
-    die("Connection failed: " . mysqli_connect_error());
-}
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$projectQuery = "SELECT * FROM `projects` WHERE `deleted` = 0";
-$projectrs = mysqli_query($connect, $projectQuery);
+$projectQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
+
+$projectQuery->execute();
+$row=$projectQuery->fetchAll();
 
 ?>
 
@@ -32,43 +31,33 @@ $projectrs = mysqli_query($connect, $projectQuery);
                     <th>Alt Text</th>
                     <th>Operations</th>
                 </tr>
-                <?php
-                do {
-                    $row = mysqli_fetch_assoc($projectrs);
-
-                    if ($row != NULL) {
-                        $id = $row['id'];
-                        $projectDescription = $row['$projectDescription'];
-                        $link = $row['link'];
-                        $imageSource = $row['imageSource'];
-                        $alternativeText = $row['alternativeText'];
-
+                <form method="post" action="portfolio_manage.php">
+                    <?php
+                    foreach ($row as $project) {
                         ?>
-                        <form method="post" action="portfolio_manage.php">
-                            <tr>
-                                <td>
-                                    <?php echo $projectDescription?>
-                                </td>
-                                <td>
-                                    <?php echo $link?>
-                                </td>
-                                <td>
-                                    <?php echo $imageSource?>
-                                </td>
-                                <td>
-                                    <?php echo $alternativeText?>
-                                </td>
-                                <td>
-                                    <input type="submit" name="edit" value="Edit">
-                                    <input type="submit" name="delete" value="Delete">
-                                    <input type="hidden" name="id" value="<?php echo $id?>">
-                                </td>
-                            </tr>
-                        </form>
+                        <tr>
+                            <td>
+                                <?php echo $project['projectDescription']?>
+                            </td>
+                            <td>
+                                <?php echo $project['link']?>
+                            </td>
+                            <td>
+                                <?php echo $project['imageSource']?>
+                            </td>
+                            <td>
+                                <?php echo $project['alternativeText']?>
+                            </td>
+                            <td>
+                                <input type="submit" name="edit" value="Edit">
+                                <input type="submit" name="delete" value="Delete">
+                                <input type="hidden" name="id" value="<?php echo $project['id']?>">
+                            </td>
+                        </tr>
                         <?php
-                    }
-                } while ($row != NULL);
-                ?>
+                        }
+                        ?>
+                </form>
             </table>
         <br><h3>ADD PROJECT</h3>
         <form method="post" action="portfolio_insert.php">
