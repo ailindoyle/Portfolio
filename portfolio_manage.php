@@ -60,6 +60,9 @@ $alternativeText = $row['alternativeText'];
             <input type="hidden" name="id" value="<?php echo $id?>">
         </form>
     </div>
+    <div class="container">
+        <br><br><a href="admin_portfolio.php">&#171; Back to Manage Projects</a><br><br>
+    </div>
 </body>
 </html>
 

@@ -8,3 +8,7 @@ table, th, td {
 a {
     color: #36494d;
 }
+
+input[type=text] {
+    width: 50%;
+}

@@ -57,6 +57,9 @@ $alternative = $row['alternative'];
             <input type="hidden" name="id" value="<?php echo $id?>">
         </form>
     </div>
+    <div class="container">
+        <br><br><a href="admin_about.php">&#171; Back to Manage Skills</a><br><br>
+    </div>
 </body>
 </html>
 
