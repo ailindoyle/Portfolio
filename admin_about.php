@@ -17,6 +17,7 @@ $description = $row['description'];
 $skillsQuery = $db->prepare("SELECT * FROM `skills` WHERE `deleted` = 0");
 
 $skillsQuery->execute();
+$skillsRow=$skillsQuery->fetchAll();
 
 ?>
 
@@ -50,39 +51,30 @@ $skillsQuery->execute();
                     <th>Alt Text</th>
                     <th>Operations</th>
                 </tr>
-                <?php
-                do {
-                    $skillsRow=$skillsQuery->fetchAll();
-
-                    if ($skillsRow != NULL) {
-                        $id = $skillsRow['id'];
-                        $skillName = $skillsRow['skillName'];
-                        $imageSource = $skillsRow['imageSource'];
-                        $alternative = $skillsRow['alternative'];
-
+                <form method="post" action="about_skill_manage.php">
+                    <?php
+                    foreach ($skillsRow as $skill) {
                         ?>
-                        <form method="post" action="about_skill_manage.php">
-                            <tr>
-                                <td>
-                                    <?php echo $skillName?>
-                                </td>
-                                <td>
-                                    <?php echo $imageSource?>
-                                </td>
-                                <td>
-                                    <?php echo $alternative?>
-                                </td>
-                                <td>
-                                    <input type="submit" name="edit" value="Edit">
-                                    <input type="submit" name="delete" value="Delete">
-                                    <input type="hidden" name="id" value="<?php echo $id?>">
-                                </td>
-                            </tr>
-                        </form>
+                        <tr>
+                            <td>
+                                <?php echo $skill['skillName']?>
+                            </td>
+                            <td>
+                                <?php echo $skill['imageSource']?>
+                            </td>
+                            <td>
+                                <?php echo $skill['alternative']?>
+                            </td>
+                            <td>
+                                <input type="submit" name="edit" value="Edit">
+                                <input type="submit" name="delete" value="Delete">
+                                <input type="hidden" name="id" value="<?php echo $skill['id']?>">
+                            </td>
+                        </tr>
                         <?php
-                    }
-                } while ($skillsRow != NULL);
-                ?>
+                        }
+                        ?>
+                </form>
             </table>
         <br><h3>ADD SKILL</h3>
         <form method="post" action="about_skill_insert.php">
