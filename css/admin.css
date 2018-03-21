@@ -1,0 +1,9 @@
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #36494d;
+}
+
+a {
+    color: #36494d;
+}

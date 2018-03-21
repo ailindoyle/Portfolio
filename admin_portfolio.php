@@ -19,6 +19,7 @@ $row=$projectQuery->fetchAll();
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/admin.css"/>
 </head>
 <body>
     <div class="container">
