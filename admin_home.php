@@ -18,7 +18,6 @@ $featuredQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
 
 $featuredQuery->execute();
 $featuredRow = $featuredQuery->fetchAll();
-var_dump($featuredRow);
 
 ?>
 
@@ -55,10 +54,10 @@ var_dump($featuredRow);
                 <th>Featured</th>
                 <th>Operations</th>
             </tr>
-            <form method="post" action="featured_manage.php">
-                <?php
-                foreach ($featuredRow as $featured) {
-                    ?>
+            <?php
+            foreach ($featuredRow as $featured) {
+                ?>
+                <form method="post" action="featured_manage.php">
                     <tr>
                         <td>
                             <?php echo $featured['projectDescription']?>
@@ -81,10 +80,10 @@ var_dump($featuredRow);
                             <input type="hidden" name="id" value="<?php echo $featured['id']?>">
                         </td>
                     </tr>
-                    <?php
-                }
-                ?>
-            </form>
+                </form>
+                <?php
+            }
+            ?>
         </table>
     </div>
     <div class="container">

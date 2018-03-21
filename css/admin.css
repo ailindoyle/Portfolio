@@ -1,12 +1,17 @@
+a {
+    color: #36494d;
+}
 
 table, th, td {
     border-collapse: collapse;
     border: 1px solid #36494d;
     text-align: left;
+    word-wrap: break-word;
 }
 
-a {
-    color: #36494d;
+tr {
+    resize: vertical;
+    overflow: auto;
 }
 
 input[type=text] {
