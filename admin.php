@@ -12,7 +12,7 @@
         <div>
             <p><a href="admin_home.php">Home</a></p>
             <p><a href="admin_about.php">About</a></p>
-            <p>Portfolio</p>
+            <p><a href="admin_portfolio.php">Portfolio</a></p>
             <p><a href="admin_contact.php">Contact</a></p>
         </div>
     </div>

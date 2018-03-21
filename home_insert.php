@@ -18,7 +18,7 @@ $query->execute();
 
 $result = $query->fetch();
 
-header('Location: admin.php');
+header('Location: admin_home.php');
 exit();
 
 
