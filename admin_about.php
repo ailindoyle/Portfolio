@@ -24,7 +24,7 @@ $skillsrs = mysqli_query($connect, $skillsQuery);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Caitlin Doyle | Admin</title>
+    <title>Caitlin Doyle | Admin About</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>

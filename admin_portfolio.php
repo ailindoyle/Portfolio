@@ -8,70 +8,55 @@ if(!$connect)
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$query = "SELECT * FROM `about` ORDER BY `dateAdded` DESC LIMIT 1";
-$rs = mysqli_query($connect, $query);
-$row = mysqli_fetch_assoc($rs);
-
-$photoSource = $row['photoSource'];
-$photoAlt = $row['photoAlt'];
-$description = $row['description'];
-
-$skillsQuery = "SELECT * FROM `skills` WHERE `deleted` = 0";
-$skillsrs = mysqli_query($connect, $skillsQuery);
+$projectQuery = "SELECT * FROM `projects` WHERE `deleted` = 0";
+$projectrs = mysqli_query($connect, $projectQuery);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Caitlin Doyle | Admin</title>
+    <title>Caitlin Doyle | Admin Portfolio</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 <body>
     <div class="container">
-        <h2>ABOUT</h2>
-        <form method="post" action="about_main_insert.php">
-            Picture:<br>
-            <input type="text" name="photoSource" value="<?php echo $photoSource?>"><br>
-            Alternative Image Text:<br>
-            <input type="text" name="photoAlt" value="<?php echo $photoAlt?>"><br>
-            Description:<br>
-            <input type="text" name="description" value="<?php echo $description?>"><br><br>
-            <input type="submit" value="Save">
-        </form>
-    </div>
-    <div class="container">
-        <h2>MANAGE SKILLS</h2>
+        <h2>MANAGE PROJECTS</h2>
             <table>
                 <tr>
-                    <th>Skill Name</th>
+                    <th>Project Description</th>
+                    <th>Link</th>
                     <th>Image Source</th>
                     <th>Alt Text</th>
                     <th>Operations</th>
                 </tr>
                 <?php
                 do {
-                    $row = mysqli_fetch_assoc($skillsrs);
+                    $row = mysqli_fetch_assoc($projectrs);
 
                     if ($row != NULL) {
                         $id = $row['id'];
-                        $skillName = $row['skillName'];
+                        $projectDescription = $row['$projectDescription'];
+                        $link = $row['link'];
                         $imageSource = $row['imageSource'];
-                        $alternative = $row['alternative'];
+                        $alternativeText = $row['alternativeText'];
 
                         ?>
-                        <form method="post" action="about_skill_manage.php">
+                        <form method="post" action="portfolio_manage.php">
                             <tr>
                                 <td>
-                                    <?php echo $skillName?>
+                                    <?php echo $projectDescription?>
+                                </td>
+                                <td>
+                                    <?php echo $link?>
                                 </td>
                                 <td>
                                     <?php echo $imageSource?>
                                 </td>
                                 <td>
-                                    <?php echo $alternative?>
+                                    <?php echo $alternativeText?>
                                 </td>
                                 <td>
                                     <input type="submit" name="edit" value="Edit">
@@ -85,14 +70,16 @@ $skillsrs = mysqli_query($connect, $skillsQuery);
                 } while ($row != NULL);
                 ?>
             </table>
-        <br><h3>ADD SKILL</h3>
-        <form method="post" action="about_skill_insert.php">
-            Skills Name:<br>
-            <input type="text" name="skillName"><br>
+        <br><h3>ADD PROJECT</h3>
+        <form method="post" action="portfolio_insert.php">
+            Project Description:<br>
+            <input type="text" name="projectDescription" value="<?php echo $projectDescription?>"><br>
+            Link:<br>
+            <input type="text" name="link" value="<?php echo $link?>"><br>
             Image Source:<br>
-            <input type="text" name="imageSource"><br>
+            <input type="text" name="imageSource" value="<?php echo $imageSource?>"><br>
             Alternative Image Text:<br>
-            <input type="text" name="alternative"><br><br>
+            <input type="text" name="alternativeText" value="<?php echo $alternativeText?>"><br><br>
             <input type="submit" value="Save">
         </form>
     </div>
