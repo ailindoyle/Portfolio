@@ -2,15 +2,13 @@
 
 include 'settings.php';
 
-$connect = mysqli_connect($host,$user,$password,$db);
-if(!$connect)
-{
-    die("Connection failed: " . mysqli_connect_error());
-}
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query = "SELECT * FROM `contact` ORDER BY `dateAdded` DESC LIMIT 1";
-$rs = mysqli_query($connect, $query);
-$row = mysqli_fetch_assoc($rs);
+$query = $db->prepare("SELECT * FROM `contact` ORDER BY `dateAdded` DESC LIMIT 1");
+
+$query->execute();
+$row=$query->fetch();
 
 $description = $row['description'];
 $email = $row['email'];

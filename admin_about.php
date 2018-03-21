@@ -2,22 +2,21 @@
 
 include 'settings.php';
 
-$connect = mysqli_connect($host,$user,$password,$db);
-if(!$connect)
-{
-    die("Connection failed: " . mysqli_connect_error());
-}
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query = "SELECT * FROM `about` ORDER BY `dateAdded` DESC LIMIT 1";
-$rs = mysqli_query($connect, $query);
-$row = mysqli_fetch_assoc($rs);
+$query = $db->prepare("SELECT * FROM `about` ORDER BY `dateAdded` DESC LIMIT 1");
+
+$query->execute();
+$row=$query->fetch();
 
 $photoSource = $row['photoSource'];
 $photoAlt = $row['photoAlt'];
 $description = $row['description'];
 
-$skillsQuery = "SELECT * FROM `skills` WHERE `deleted` = 0";
-$skillsrs = mysqli_query($connect, $skillsQuery);
+$skillsQuery = $db->prepare("SELECT * FROM `skills` WHERE `deleted` = 0");
+
+$skillsQuery->execute();
 
 ?>
 
@@ -53,13 +52,13 @@ $skillsrs = mysqli_query($connect, $skillsQuery);
                 </tr>
                 <?php
                 do {
-                    $row = mysqli_fetch_assoc($skillsrs);
+                    $skillsRow=$skillsQuery->fetchAll();
 
-                    if ($row != NULL) {
-                        $id = $row['id'];
-                        $skillName = $row['skillName'];
-                        $imageSource = $row['imageSource'];
-                        $alternative = $row['alternative'];
+                    if ($skillsRow != NULL) {
+                        $id = $skillsRow['id'];
+                        $skillName = $skillsRow['skillName'];
+                        $imageSource = $skillsRow['imageSource'];
+                        $alternative = $skillsRow['alternative'];
 
                         ?>
                         <form method="post" action="about_skill_manage.php">
@@ -82,7 +81,7 @@ $skillsrs = mysqli_query($connect, $skillsQuery);
                         </form>
                         <?php
                     }
-                } while ($row != NULL);
+                } while ($skillsRow != NULL);
                 ?>
             </table>
         <br><h3>ADD SKILL</h3>
@@ -93,7 +92,7 @@ $skillsrs = mysqli_query($connect, $skillsQuery);
             <input type="text" name="imageSource"><br>
             Alternative Image Text:<br>
             <input type="text" name="alternative"><br><br>
-            <input type="submit" value="Save">
+            <input type="submit" value="Add">
         </form>
     </div>
 </body>

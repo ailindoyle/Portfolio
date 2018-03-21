@@ -73,14 +73,14 @@ $projectrs = mysqli_query($connect, $projectQuery);
         <br><h3>ADD PROJECT</h3>
         <form method="post" action="portfolio_insert.php">
             Project Description:<br>
-            <input type="text" name="projectDescription" value="<?php echo $projectDescription?>"><br>
+            <input type="text" name="projectDescription"><br>
             Link:<br>
-            <input type="text" name="link" value="<?php echo $link?>"><br>
+            <input type="text" name="link"><br>
             Image Source:<br>
-            <input type="text" name="imageSource" value="<?php echo $imageSource?>"><br>
+            <input type="text" name="imageSource"><br>
             Alternative Image Text:<br>
-            <input type="text" name="alternativeText" value="<?php echo $alternativeText?>"><br><br>
-            <input type="submit" value="Save">
+            <input type="text" name="alternativeText"><br><br>
+            <input type="submit" value="Add">
         </form>
     </div>
 </body>

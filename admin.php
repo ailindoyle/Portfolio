@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
-
 <body>
     <div class="container">
         <h2>Select Page To Change</h2>
