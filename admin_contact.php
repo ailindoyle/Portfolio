@@ -18,7 +18,7 @@ $email = $row['email'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Caitlin Doyle | Admin</title>
+    <title>Caitlin Doyle | Admin Contact</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -34,6 +34,9 @@ $email = $row['email'];
             <input type="text" name="email" value="<?php echo $email?>"><br>
             <input type="submit" value="Save">
         </form>
+    </div>
+    <div class="container">
+        <br><br><a href="admin.php">&#171; Back to list</a><br><br>
     </div>
 </body>
 </html>

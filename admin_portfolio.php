@@ -73,6 +73,9 @@ $row=$projectQuery->fetchAll();
             <input type="submit" value="Add">
         </form>
     </div>
+    <div class="container">
+        <br><br><a href="admin.php">&#171; Back to list</a><br><br>
+    </div>
 </body>
 </html>
 

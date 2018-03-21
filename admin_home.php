@@ -19,7 +19,7 @@ $summary = $row['summary'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Caitlin Doyle | Admin</title>
+    <title>Caitlin Doyle | Admin Home</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -34,9 +34,12 @@ $summary = $row['summary'];
             Header Bottom:<br>
             <input type="text" name="headerBottom" value="<?php echo $headerBottom?>"><br>
             Summary:<br>
-            <input type="text" name="summary" value="<?php echo $summary?>"><br>
+            <input type="text" name="summary" value="<?php echo $summary?>"><br><br>
             <input type="submit" value="Save">
         </form>
+    </div>
+    <div class="container">
+        <br><br><a href="admin.php">&#171; Back to list</a><br><br>
     </div>
 </body>
 </html>
