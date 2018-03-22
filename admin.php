@@ -1,22 +1,21 @@
-<?php
-
-
-
-?>
-
-
-<form method="post" action="sql_insert.php">
-    Name:<br>
-    <input type="text" name="name"><br>
-    Date of Birth:<br>
-    <input type="date" name="dateOfBirth"><br>
-    Gender:<br>
-    <input type="radio" name="gender" value="o" checked> Other<br>
-    <input type="radio" name="gender" value="f"> Female<br>
-    <input type="radio" name="gender" value="m"> Male<br>
-    Child Name:<br>
-    <input type="text" name="childName"><br>
-    Pet Name:<br>
-    <input type="text" name="petName"><br>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Caitlin Doyle | Admin</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/admin.css"/>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Page To Change</h2>
+        <div>
+            <p><a href="admin_home.php">Home</a></p>
+            <p><a href="admin_about.php">About</a></p>
+            <p><a href="admin_portfolio.php">Portfolio</a></p>
+            <p><a href="admin_contact.php">Contact</a></p>
+        </div>
+    </div>
+</body>
+</html>
