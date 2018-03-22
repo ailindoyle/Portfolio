@@ -1,23 +1,14 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query = $db->prepare("SELECT * FROM `about` ORDER BY `dateAdded` DESC LIMIT 1");
+$row = getAboutInfo($db);
 
-$query->execute();
-$row=$query->fetch();
-
-$photoSource = $row['photoSource'];
-$photoAlt = $row['photoAlt'];
-$description = $row['description'];
-
-$skillsQuery = $db->prepare("SELECT * FROM `skills` WHERE `deleted` = 0");
-
-$skillsQuery->execute();
-$skillsRow = $skillsQuery->fetchAll();
+$skillsRow = getSkills($db);
 
 ?>
 
@@ -79,10 +70,10 @@ $skillsRow = $skillsQuery->fetchAll();
     <div class="container">
         <div class="description">
             <div class="picture">
-                <img src="<?php echo $photoSource?>" alt="<?php echo $photoAlt?>">
+                <img src="<?php echo $row['photoSource'] ?>" alt="<?php echo $row['photoAlt'] ?>">
             </div>
             <div class="about-me">
-                <p><?php echo $description?></p>
+                <p><?php echo $row['description'] ?></p>
             </div>
         </div>
     </div>
@@ -94,16 +85,7 @@ $skillsRow = $skillsQuery->fetchAll();
         </div>
 
         <div class="logo-deck">
-
-            <?php
-            foreach ($skillsRow as $skills) {
-                ?>
-                <div class="skills-logo col-4 lg-tb-col-3 sm-tb-col-2 mb-col-1">
-                    <img src="<?php echo $skills['imageSource']?>" alt="<?php echo $skills['alternative']?>">
-                </div>
-                <?php
-            }
-            ?>
+            <?php echo displaySkills($skillsRow); ?>
         </div>
     </div>
 </div>

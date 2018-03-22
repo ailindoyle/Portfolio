@@ -1,21 +1,12 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
+
 $db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query= $db->prepare("INSERT INTO `skills` (`skillName`,`imageSource`,`alternative`) VALUES (:skillName, :imageSource, :alternative);");
-
-$skillName = $_POST['skillName'];
-$imageSource = $_POST['imageSource'];
-$alternative = $_POST['alternative'];
-
-$query->bindParam(':skillName', $skillName);
-$query->bindParam(':imageSource',$imageSource);
-$query->bindParam(':alternative',$alternative);
-
-$status = $query->execute();
-
-$result = $query->fetch();
+insertSkill($db, $_POST);
 
 header('Location: admin_about.php');
 exit();
