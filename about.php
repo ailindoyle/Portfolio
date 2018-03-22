@@ -1,5 +1,24 @@
 <?php
 
+include 'settings.php';
+
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$query = $db->prepare("SELECT * FROM `about` ORDER BY `dateAdded` DESC LIMIT 1");
+
+$query->execute();
+$row=$query->fetch();
+
+$photoSource = $row['photoSource'];
+$photoAlt = $row['photoAlt'];
+$description = $row['description'];
+
+$skillsQuery = $db->prepare("SELECT * FROM `skills` WHERE `deleted` = 0");
+
+$skillsQuery->execute();
+$skillsRow = $skillsQuery->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +79,10 @@
     <div class="container">
         <div class="description">
             <div class="picture">
-                <img src="images/temp_picture.jpg" alt="Me">
+                <img src="<?php echo $photoSource?>" alt="<?php echo $photoAlt?>">
             </div>
             <div class="about-me">
-                <p>My name is Caitlin Doyle, and I am a full stack web developer in training, training in Bath but living in Bristol.<br><br>In 2017 I finished a Master's degree in Marine Biology. Whilst writing my thesis I had the opportunity to write some code to carry out statistical analyses and found myself really enjoying the process of aiming for a result, working out how to get there, and then writing the code.<br><br>At the end of 2017 I stumbled across Mayden Academy, based in Bath, and really liked what they are doing for training people to become full stack web developers. I applied for the course and was fortunate enough to be offered a place!<br><br>Following the course, I would love to combine these two skillsets of web development and scientific analysis. My goal would be to apply technological solutions to problems facing the planet, as well as making science and research useful and accessible for the wider population.</p>
+                <p><?php echo $description?></p>
             </div>
         </div>
     </div>
@@ -73,19 +92,18 @@
         <div class="skills-header">
             <h2>SKILLS AND TECHNOLOGIES</h2>
         </div>
+
         <div class="logo-deck">
-            <div class="skills-logo col-4 lg-tb-col-3 sm-tb-col-2 mb-col-1">
-                <img src="images/html5_logo.png" alt="HTML5">
-            </div>
-            <div class="skills-logo col-4 lg-tb-col-3 sm-tb-col-2 mb-col-1">
-                <img src="images/css3_logo.png" alt="CSS3">
-            </div>
-            <div class="skills-logo col-4 lg-tb-col-3 sm-tb-col-2 mb-col-1">
-                <img src="images/csm_logo.png" alt="Certified Scrum Master">
-            </div>
-            <div class="skills-logo col-4 lg-tb-col-3 sm-tb-col-2 mb-col-1">
-                <img src="images/github_logo.svg" alt="GitHub">
-            </div>
+
+            <?php
+            foreach ($skillsRow as $skills) {
+                ?>
+                <div class="skills-logo col-4 lg-tb-col-3 sm-tb-col-2 mb-col-1">
+                    <img src="<?php echo $skills['imageSource']?>" alt="<?php echo $skills['alternative']?>">
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </div>
