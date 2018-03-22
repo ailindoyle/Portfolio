@@ -5,10 +5,7 @@ include 'settings.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$projectQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
-
-$projectQuery->execute();
-$row=$projectQuery->fetchAll();
+$row = getPortfolioInfo($db);
 
 ?>
 
@@ -64,18 +61,7 @@ $row=$projectQuery->fetchAll();
                 <h2>PROJECTS</h2>
             </div>
             <div>
-                <?php
-                foreach ($row as $project) {
-                    ?>
-                    <div class="project-links col-3 tb-col-2 mb-col-1">
-                        <div class="project">
-                            <a href="<?php echo $project['link']?>" target="_blank"><img src="<?php echo $project['imageSource']?>" alt="<?php echo $project['alternativeText']?>"></a>
-                            <p><?php echo $project['projectDescription']?></p>
-                        </div>
-                    </div>
-                    <?php
-                }
-                ?>
+                <?php echo displayProjects($row); ?>
             </div>
         </div>
     </div>

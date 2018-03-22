@@ -1,7 +1,10 @@
 <?php
 
+
+////////////ABOUT PAGE CONTENT MANAGEMENT FUNCTIONS///////////////
+
 /**
- * gets most recent row of data from about table in portfolio db
+ * fetches most recent row of data from about table in portfolio db
  *
  * @param $db db portfolio database
  * @return array most recent row in about table
@@ -13,10 +16,28 @@ function getAboutInfo($db) :array {
 }
 
 /**
- * gets data from skills table in portfolio db, excludes deleted skills
+ * inserts new about information from about admin form to about table of portfolio db as new row
+ *
+ * @param $db portfolio db
+ * @param $postData represents form post data to be input into the table
+ */
+function insertAboutToDb($db, $postData) {
+
+    $query= $db->prepare("INSERT INTO `about` (`photoSource`,`photoAlt`,`description`) VALUES (:photoSource, :photoAlt, :description);");
+
+    $query->bindParam(':photoSource', $postData['photoSource']);
+    $query->bindParam(':photoAlt',$postData['photoAlt']);
+    $query->bindParam(':description',$postData['description']);
+
+    $query->execute();
+
+}
+
+/**
+ * fetches data from skills table in portfolio db, excludes deleted skills
  *
  * @param $db db portfolio database
- * @return array
+ * @return array returns all skills excluding deleted
  */
 function getSkills($db) :array {
     $skillsQuery = $db->prepare("SELECT * FROM `skills` WHERE `deleted` = 0");
@@ -25,7 +46,7 @@ function getSkills($db) :array {
 }
 
 /**
- * displays skills images, loops through all active skills
+ * displays skills images on portfolio about page, loops through all active skills
  *
  * @param array $skillsRow all data in a row relating to a skill
  * @return string html string to define / describe skill images and alternative text
@@ -38,7 +59,12 @@ function displaySkills(array $skillsRow) :string {
     return $result;
 }
 
-
+/**
+ * Creates form in about admin page for each skill in the skills table of portfolio db
+ *
+ * @param array $skillsRow each row of the table as individual skill includes data required by a tags in html
+ * @return string returns string that defines html table with edit and delete buttons
+ */
 function createSkillsForm(array $skillsRow) :string {
     $result = ' ';
     foreach ($skillsRow as $skill) {
@@ -64,7 +90,12 @@ function createSkillsForm(array $skillsRow) :string {
     return $result;
 }
 
-
+/**
+ * inserts new skills into skills table of portfolio db from about admin form
+ *
+ * @param $db portfolio database
+ * @param $postData represents form post data to be input into the table
+ */
 function insertSkill($db, $postData) {
 
     $query= $db->prepare("INSERT INTO `skills` (`skillName`,`imageSource`,`alternative`) VALUES (:skillName, :imageSource, :alternative);");
@@ -77,17 +108,37 @@ function insertSkill($db, $postData) {
 
 }
 
-function insertAboutToDb($db, $postData) {
 
-    $query= $db->prepare("INSERT INTO `about` (`photoSource`,`photoAlt`,`description`) VALUES (:photoSource, :photoAlt, :description);");
+/////////////////////PORTFOLIO PAGE CONTENT MANAGEMENT FUNCTIONS////////////////////////////
 
-    $query->bindParam(':photoSource', $postData['photoSource']);
-    $query->bindParam(':photoAlt',$postData['photoAlt']);
-    $query->bindParam(':description',$postData['description']);
 
-    $query->execute();
-
+/**
+ * fetches project data from projects table in portfolio db
+ *
+ * @param $db database portfolio
+ * @return array returns all projects, excludes deleted
+ */
+function getPortfolioInfo($db) :array {
+    $projectQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
+    $projectQuery->execute();
+    return $query->fetch();
 }
 
 
-
+/**
+ * displays projects into portfolio tab of website
+ *
+ * @param array $row single project contained within single row of project table
+ * @return string html string to define / describe project image, link, description and alternative text
+ */
+function displayProjects(array $row) :string {
+    $result = ' ';
+    foreach ($row as $project) {
+        $result .= "<div class='project-links col-3 tb-col-2 mb-col-1'><div class='project'>
+                <a href='" . $project['link'] . "' target='_blank'><img src='" . $project['imageSource'] . "' alt='" . $project['alternativeText'] . "'></a>
+                <p><?php echo'" . $project['projectDescription'] . "'</p>
+            </div>
+        </div> ";
+    }
+    return $result;
+}
