@@ -1,20 +1,14 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query = $db->prepare("SELECT * FROM `contact` ORDER BY `dateAdded` DESC LIMIT 1");
-
-$query->execute();
-$row=$query->fetch();
-
-$description = $row['description'];
-$email = $row['email'];
+$row = getContactInfo($db);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,8 +67,8 @@ $email = $row['email'];
 <div class="contact-info">
     <div class="container">
         <div class="contact">
-            <h2><?php echo $description?></h2>
-            <h2><?php echo $email?></h2>
+            <h2><?php echo $row['description']?></h2>
+            <h2><?php echo $row['email']?></h2>
             <ul class="social-media">
                 <li>
                     <a href="https://www.linkedin.com/in/ailin-doyle-304abbb0/" target="_blank"><img src="images/icons8-linkedin-48.png" alt="LinkedIn"/></a>

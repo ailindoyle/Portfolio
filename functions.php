@@ -1,7 +1,7 @@
 <?php
 
 
-////////////ABOUT PAGE CONTENT MANAGEMENT FUNCTIONS///////////////
+//////////// ABOUT PAGE CONTENT MANAGEMENT FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * fetches most recent row of data from about table in portfolio db
@@ -108,7 +108,6 @@ function insertSkill($db, $postData) {
 
 }
 
-
 /**
  * edits skill using form in manage skills
  *
@@ -128,8 +127,6 @@ function editSkill($db, $postData) {
 
     }
 }
-
-
 
 /**
  * deletes skill from skills table by changing value from 0 to 1
@@ -166,7 +163,7 @@ function getSingleSkill($db, $postData) {
 }
 
 
-/////////////////////PORTFOLIO PAGE CONTENT MANAGEMENT FUNCTIONS////////////////////////////
+///////////////////// PORTFOLIO PAGE CONTENT MANAGEMENT FUNCTIONS /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /**
@@ -180,8 +177,6 @@ function getPortfolioInfo($db) :array {
     $projectQuery->execute();
     return $query->fetch();
 }
-
-
 
 /**
  * displays projects into portfolio tab of website
@@ -242,7 +237,6 @@ function editProject($db, $postData) {
     }
 }
 
-
 /**
  * deletes project from projects table by changing value from 0 to 1
  *
@@ -277,7 +271,6 @@ function redirectIfStuck ($postData) {
 
 }
 
-
 /**
  * populates single into form for editing using id number
  *
@@ -291,6 +284,53 @@ function getSingleProject($db, $postData) {
     $fetchQuery->execute();
     return $fetchQuery->fetch();
 }
+
+
+///////////////////// CONTACT PAGE CONTENT MANAGEMENT FUNCTIONS /////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * fetches contact data from contact table in portfolio db
+ *
+ * @param $db database portfolio
+ * @return array returns all contact data, excludes deleted
+ */
+function getContactInfo($db) :array {
+    $query = $db->prepare("SELECT * FROM `contact` ORDER BY `dateAdded` DESC LIMIT 1");
+    $query->execute();
+    return $query->fetch();
+}
+
+/**
+ * inserts contact info into contact table of portfolio db from contact admin form
+ *
+ * @param $db portfolio database
+ * @param $postData represents form post data to be input into the table
+ */
+function insertContact($db, $postData) {
+
+    $query= $db->prepare("INSERT INTO `contact` (`description`,`email`) VALUES (:description, :email);");
+
+    $query->bindParam(':description', $postData['description']);
+    $query->bindParam(':email',$postData['email']);
+
+    $query->execute();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
