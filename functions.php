@@ -142,3 +142,16 @@ function displayProjects(array $row) :string {
     }
     return $result;
 }
+
+function insertProject($db, $postData) {
+
+    $query= $db->prepare("INSERT INTO `projects` (`projectDescription`,`link`, `imageSource`,`alternativeText`) VALUES (:projectDescription, :link, :imageSource, :alternativeText);");
+
+    $query->bindParam(':projectDescription', $postData['projectDescription']);
+    $query->bindParam(':link', $postData['link']);
+    $query->bindParam(':imageSource', $postData['imageSource']);
+    $query->bindParam(':alternativeText', $postData['alternativeText']);
+
+    $query->execute();
+
+}

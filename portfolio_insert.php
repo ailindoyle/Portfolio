@@ -1,23 +1,12 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
+
 $db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query= $db->prepare("INSERT INTO `projects` (`projectDescription`,`link`, `imageSource`,`alternativeText`) VALUES (:projectDescription, :link, :imageSource, :alternativeText);");
-
-$projectDescription = $_POST['projectDescription'];
-$link = $_POST['link'];
-$imageSource = $_POST['imageSource'];
-$alternativeText = $_POST['alternativeText'];
-
-$query->bindParam(':projectDescription', $projectDescription);
-$query->bindParam(':link', $link);
-$query->bindParam(':imageSource', $imageSource);
-$query->bindParam(':alternativeText', $alternativeText);
-
-$status = $query->execute();
-
-$result = $query->fetch();
+insertProject($db, $_POST);
 
 header('Location: admin_portfolio.php');
 exit();
