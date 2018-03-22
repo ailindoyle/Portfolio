@@ -6,27 +6,11 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$edit = $_POST['edit'];
-$delete = $_POST['delete'];
-$id = $_POST['id'];
-
 deleteSkill($db, $_POST);
 
 redirectIfStuck ($_POST);
 
-
-
-
-$fetchQuery = $db->prepare("SELECT * FROM `skills` WHERE `id` = :id");
-$fetchQuery->bindParam(':id', $_POST['id']);
-
-$fetchQuery->execute();
-$row=$fetchQuery->fetch();
-
-
-//$row = getSingleSkill($db, $_POST);
-
-
+$row = getSingleSkill($db, $_POST);
 
 ?>
 
