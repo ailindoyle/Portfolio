@@ -1,6 +1,7 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -9,30 +10,23 @@ $edit = $_POST['edit'];
 $delete = $_POST['delete'];
 $id = $_POST['id'];
 
-if ($delete != NULL && $id != NULL) {
-    $deleteQuery = $db->prepare("UPDATE `skills` SET `deleted` = 1 WHERE `id` = :id");
-    $deleteQuery->bindParam(':id', $id);
+deleteSkill($db, $_POST);
 
-    $deleteQuery->execute();
+redirectIfStuck ($_POST);
 
-    header('Location: admin_about.php');
-    exit();
-}
 
-if ($edit == NULL || $id == NULL) {
-    header('Location: admin_about.php');
-    exit();
-}
+
 
 $fetchQuery = $db->prepare("SELECT * FROM `skills` WHERE `id` = :id");
-$fetchQuery->bindParam(':id', $id);
+$fetchQuery->bindParam(':id', $_POST['id']);
 
 $fetchQuery->execute();
 $row=$fetchQuery->fetch();
 
-$skillName = $row['skillName'];
-$imageSource = $row['imageSource'];
-$alternative = $row['alternative'];
+
+//$row = getSingleSkill($db, $_POST);
+
+
 
 ?>
 
@@ -50,13 +44,13 @@ $alternative = $row['alternative'];
         <h2>EDIT SKILL</h2>
         <form method="post" action="about_skill_update.php">
             Skills Name:<br>
-            <input type="text" name="skillName" value="<?php echo $skillName?>"><br>
+            <input type="text" name="skillName" value="<?php echo $row['skillName']?>"><br>
             Image Source:<br>
-            <input type="text" name="imageSource" value="<?php echo $imageSource?>"><br>
+            <input type="text" name="imageSource" value="<?php echo $row['imageSource']?>"><br>
             Alternative Image Text:<br>
-            <input type="text" name="alternative" value="<?php echo $alternative?>"><br><br>
+            <input type="text" name="alternative" value="<?php echo $row['alternative']?>"><br><br>
             <input type="submit" value="Save">
-            <input type="hidden" name="id" value="<?php echo $id?>">
+            <input type="hidden" name="id" value="<?php echo $_POST['id']?>">
         </form>
     </div>
     <div class="container">

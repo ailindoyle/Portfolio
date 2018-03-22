@@ -109,6 +109,63 @@ function insertSkill($db, $postData) {
 }
 
 
+/**
+ * edits skill using form in manage skills
+ *
+ * @param $db portfolio database
+ * @param $postData manage skills form post data placeholder
+ */
+function editSkill($db, $postData) {
+
+    if ($postData['id'] != NULL) {
+        $updateQuery = $db->prepare("UPDATE `skills` SET `skillName` = :skillName, `imageSource` = :imageSource, `alternative` = :alternative WHERE `id` = :id");
+        $updateQuery->bindParam(':id', $postData['id']);
+        $updateQuery->bindParam(':skillName', $postData['skillName']);
+        $updateQuery->bindParam(':imageSource', $postData['imageSource']);
+        $updateQuery->bindParam(':alternative', $postData['alternative']);
+
+        $updateQuery->execute();
+
+    }
+}
+
+
+
+/**
+ * deletes skill from skills table by changing value from 0 to 1
+ *
+ * @param $db portfolio database
+ * @param $postData manage skill form post data placeholder
+ */
+function deleteSkill($db, $postData) {
+
+    if ($postData['delete'] != NULL && $postData['id'] != NULL) {
+        $deleteQuery = $db->prepare("UPDATE `skills` SET `deleted` = 1 WHERE `id` = :id");
+        $deleteQuery->bindParam(':id', $postData['id']);
+
+        $deleteQuery->execute();
+
+        header('Location: admin_about.php');
+        exit();
+    }
+
+}
+
+/**
+ * populates single into form for editing using id number
+ *
+ * @param $db portfolio database
+ * @param $postData manage skills form post data placeholder
+ * @return mixed returns data from row of id for editing
+ */
+function getSingleSkill($db, $postData) {
+    $fetchQuery = $db->prepare("SELECT * FROM `skills` WHERE `id` = :id");
+    $fetchQuery->bindParam(':id', $postData['id']);
+    $fetchQuery->execute();
+    return $fetchQuery->fetch();
+}
+
+
 /////////////////////PORTFOLIO PAGE CONTENT MANAGEMENT FUNCTIONS////////////////////////////
 
 
@@ -164,7 +221,7 @@ function insertProject($db, $postData) {
 }
 
 /**
- * updates project using form in portfolio update
+ * edits project using form in portfolio update
  *
  * @param $db portfolio database
  * @param $postData edit project admin form post data placeholder
@@ -207,14 +264,14 @@ function deleteProject($db, $postData) {
 }
 
 /**
- * redirects back to portfolio admin page if stuck
+ * redirects back to admin page if stuck
  *
  * @param $postData project admin form post data placeholder
  */
 function redirectIfStuck ($postData) {
 
     if ($postData['edit'] == NULL || $postData['id'] == NULL) {
-        header('Location: admin_portfolio.php');
+        header('Location: admin.php');
         exit();
     }
 
