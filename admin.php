@@ -17,5 +17,8 @@
             <p><a href="admin_contact.php">Contact</a></p>
         </div>
     </div>
+    <div class="container">
+        <br><br><a href="index.php">&#171; Back to portfolio</a><br><br>
+    </div>
 </body>
 </html>

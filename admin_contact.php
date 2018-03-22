@@ -36,7 +36,10 @@ $email = $row['email'];
         </form>
     </div>
     <div class="container">
-        <br><br><a href="admin.php">&#171; Back to list</a><br><br>
+        <br><br><a href="admin.php">&#171; Back to list</a>
+    </div>
+    <div class="container">
+        <br><br><a href="index.php">&#171; Back to portfolio</a><br><br>
     </div>
 </body>
 </html>
