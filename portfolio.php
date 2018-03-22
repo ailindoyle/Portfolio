@@ -1,5 +1,15 @@
 <?php
 
+include 'settings.php';
+
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$projectQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
+
+$projectQuery->execute();
+$row=$projectQuery->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -54,24 +64,18 @@
                 <h2>PROJECTS</h2>
             </div>
             <div>
-                <div class="project-links col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/test_form/" target="_blank"><img src="images/testform_tile.png" alt="Test Form"></a>
-                        <p>Project: Test Form.<br>The first piece of code I wrote of Mayden Academy. This is a test form and test table.</p>
+                <?php
+                foreach ($row as $project) {
+                    ?>
+                    <div class="project-links col-3 tb-col-2 mb-col-1">
+                        <div class="project">
+                            <a href="<?php echo $project['link']?>" target="_blank"><img src="<?php echo $project['imageSource']?>" alt="<?php echo $project['alternativeText']?>"></a>
+                            <p><?php echo $project['projectDescription']?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="project-links col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/jumbotron/" target="_blank"><img src="images/jumbotron_tile.png" alt="Jumbotron"></a>
-                        <p>Project: Jumbotron.<br>First attempt at page size responsiveness and displaying items inline.</p>
-                    </div>
-                </div>
-                <div class="project-links col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/pilot_shop/" target="_blank"><img src="images/pilotshop_tile.png" alt="Pilot Shop"></a>
-                        <p>Project: PilotShop.<br>First attempt at responsiveness in number of items on a line and hover features.</p>
-                    </div>
-                </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>
