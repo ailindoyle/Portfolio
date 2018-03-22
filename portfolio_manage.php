@@ -5,13 +5,9 @@ include 'settings.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$edit = $_POST['edit'];
-$delete = $_POST['delete'];
-$id = $_POST['id'];
-
-if ($delete != NULL && $id != NULL) {
+if ($_POST['delete'] != NULL && $_POST['id'] != NULL) {
     $deleteQuery = $db->prepare("UPDATE `projects` SET `deleted` = 1 WHERE `id` = :id");
-    $deleteQuery->bindParam(':id', $id);
+    $deleteQuery->bindParam(':id', $_POST['id']);
 
     $deleteQuery->execute();
 
@@ -19,21 +15,16 @@ if ($delete != NULL && $id != NULL) {
     exit();
 }
 
-if ($edit == NULL || $id == NULL) {
+if ($_POST['edit'] == NULL || $_POST['id'] == NULL) {
     header('Location: admin_portfolio.php');
     exit();
 }
 
 $fetchQuery = $db->prepare("SELECT * FROM `projects` WHERE `id` = :id");
-$fetchQuery->bindParam(':id', $id);
+$fetchQuery->bindParam(':id', $_POST['id']);
 
 $fetchQuery->execute();
 $row=$fetchQuery->fetch();
-
-$projectDescription = $row['projectDescription'];
-$link = $row['link'];
-$imageSource = $row['imageSource'];
-$alternativeText = $row['alternativeText'];
 
 ?>
 
@@ -51,15 +42,15 @@ $alternativeText = $row['alternativeText'];
         <h2>EDIT PROJECT</h2>
         <form method="post" action="portfolio_update.php">
             Project Description:<br>
-            <input type="text" name="projectDescription" value="<?php echo $projectDescription?>"><br>
+            <input type="text" name="projectDescription" value="<?php echo $row['projectDescription']?>"><br>
             Link:<br>
-            <input type="text" name="link" value="<?php echo $link?>"><br>
+            <input type="text" name="link" value="<?php echo $row['link']?>"><br>
             Image Source:<br>
-            <input type="text" name="imageSource" value="<?php echo $imageSource?>"><br>
+            <input type="text" name="imageSource" value="<?php echo $row['imageSource']?>"><br>
             Alternative Image Text:<br>
-            <input type="text" name="alternativeText" value="<?php echo $alternativeText?>"><br><br>
+            <input type="text" name="alternativeText" value="<?php echo $row['alternativeText']?>"><br><br>
             <input type="submit" value="Save">
-            <input type="hidden" name="id" value="<?php echo $id?>">
+            <input type="hidden" name="id" value="<?php echo $_POST['id']?>">
         </form>
     </div>
     <div class="container">
@@ -70,5 +61,3 @@ $alternativeText = $row['alternativeText'];
     </div>
 </body>
 </html>
-
-

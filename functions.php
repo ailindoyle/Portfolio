@@ -161,3 +161,27 @@ function insertProject($db, $postData) {
     $query->execute();
 
 }
+
+/**
+ * updates project using form in portfolio update
+ *
+ * @param $db portfolio database
+ * @param $postData edit project admin form post data placeholder
+ */
+function editProject($db, $postData) {
+
+    if ($postData['id'] != NULL) {
+
+        $updateQuery = $db->prepare("UPDATE `projects` SET `projectDescription` = :projectDescription, `link` = :link, `imageSource` = :imageSource, `alternativeText` = :alternativeText WHERE `id` = :id");
+        $updateQuery->bindParam(':id', $postData['id']);
+        $updateQuery->bindParam(':projectDescription', $postData['projectDescription']);
+        $updateQuery->bindParam(':link', $postData['link']);
+        $updateQuery->bindParam(':imageSource', $postData['imageSource']);
+        $updateQuery->bindParam(':alternativeText', $postData['alternativeText']);
+
+        $updateQuery->execute();
+
+    }
+}
+
+
