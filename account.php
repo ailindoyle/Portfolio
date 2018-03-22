@@ -4,8 +4,8 @@ session_start();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$correctUsername = 'Chicken Nuggets';
-$correctPassword = 'smallMonkey';
+$correctUsername = 'test';
+$correctPassword = 'test';
 
 function checkCredentials ($username, $password, $correctUsername, $correctPassword) {
 
@@ -20,3 +20,5 @@ function checkCredentials ($username, $password, $correctUsername, $correctPassw
     }
 
 }
+
+checkCredentials($username, $password, $correctPassword, $correctUsername);

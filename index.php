@@ -1,5 +1,24 @@
 <?php
 
+include 'settings.php';
+
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$query = $db->prepare("SELECT * FROM `home` ORDER BY `dateAdded` DESC LIMIT 1");
+
+$query->execute();
+$row=$query->fetch();
+
+$headerTop = $row['headerTop'];
+$headerBottom = $row['headerBottom'];
+$summary = $row['summary'];
+
+$featuredQuery = $db->prepare("SELECT * FROM `projects` WHERE `featured` = 1");
+
+$featuredQuery->execute();
+$featuredRow = $featuredQuery->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -50,14 +69,14 @@
 <div class="hero">
     <div class="main container">
         <div class="hero-box description">
-            <h1>Caitlin Doyle</h1>
-            <h3>Web Developer</h3>
+            <h1><?php echo $headerTop?></h1>
+            <h3><?php echo $headerBottom?></h3>
         </div>
     </div>
 </div>
 <div class="summary">
     <div class="container">
-        <p>My name is Caitlin Doyle and I am training to become a full stack web developer at Mayden Academy, training in Bath but based in Bristol.</p>
+        <p><?php echo $summary?></p>
     </div>
 </div>
 <div class="featured">
@@ -66,24 +85,18 @@
             <h2>FEATURED PROJECTS</h2>
         </div>
         <div>
-            <div class="featured-project-links featured-project-one col-3 tb-col-2 mb-col-1">
-                <div class="project">
-                    <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/test_form/" target="_blank"><img src="images/testform_tile.png" alt="Test Form"></a>
-                    <p>Project: Test Form.<br>The first piece of code I wrote of Mayden Academy. This is a test form and test table.</p>
+            <?php
+            foreach ($featuredRow as $featured) {
+                ?>
+                <div class="featured-project-links featured-project-one col-3 tb-col-2 mb-col-1">
+                    <div class="project">
+                        <a href="<?php echo $featured['link']?>" target="_blank"><img src="<?php echo $featured['imageSource']?>" alt="<?php echo $featured['alternativeText']?>"></a>
+                        <p><?php echo $featured['projectDescription']?></p>
+                    </div>
                 </div>
-            </div>
-            <div class="featured-project-links featured-project-two col-3 tb-col-2 mb-col-1">
-                <div class="project">
-                    <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/jumbotron/" target="_blank"><img src="images/jumbotron_tile.png" alt="Jumbotron"></a>
-                    <p>Project: Jumbotron.<br>First attempt at page size responsiveness and displaying items inline.</p>
-                </div>
-            </div>
-            <div class="featured-project-links featured-project-three col-3 tb-col-2 mb-col-1">
-                <div class="project">
-                    <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/pilot_shop/" target="_blank"><img src="images/pilotshop_tile.png" alt="Pilot Shop"></a>
-                    <p>Project: PilotShop.<br>First attempt at responsiveness in number of items on a line and hover features.</p>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </div>
