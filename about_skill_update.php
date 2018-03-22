@@ -1,7 +1,9 @@
 <?php
 
 include 'settings.php';
+
 $db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $id = $_POST['id'];
 $skillName = $_POST['skillName'];
