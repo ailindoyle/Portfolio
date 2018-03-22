@@ -143,6 +143,12 @@ function displayProjects(array $row) :string {
     return $result;
 }
 
+/**
+ * inserts new projects from portfolio admin form to projects table in database
+ *
+ * @param $db database portfolio
+ * @param $postData new project admin form post data placeholder
+ */
 function insertProject($db, $postData) {
 
     $query= $db->prepare("INSERT INTO `projects` (`projectDescription`,`link`, `imageSource`,`alternativeText`) VALUES (:projectDescription, :link, :imageSource, :alternativeText);");
