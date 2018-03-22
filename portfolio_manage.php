@@ -1,30 +1,16 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-if ($_POST['delete'] != NULL && $_POST['id'] != NULL) {
-    $deleteQuery = $db->prepare("UPDATE `projects` SET `deleted` = 1 WHERE `id` = :id");
-    $deleteQuery->bindParam(':id', $_POST['id']);
+deleteProject($db, $_POST);
 
-    $deleteQuery->execute();
+redirectIfStuck ($_POST);
 
-    header('Location: admin_portfolio.php');
-    exit();
-}
-
-if ($_POST['edit'] == NULL || $_POST['id'] == NULL) {
-    header('Location: admin_portfolio.php');
-    exit();
-}
-
-$fetchQuery = $db->prepare("SELECT * FROM `projects` WHERE `id` = :id");
-$fetchQuery->bindParam(':id', $_POST['id']);
-
-$fetchQuery->execute();
-$row=$fetchQuery->fetch();
+$row = getSingleProject($db, $_POST);
 
 ?>
 

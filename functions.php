@@ -125,6 +125,7 @@ function getPortfolioInfo($db) :array {
 }
 
 
+
 /**
  * displays projects into portfolio tab of website
  *
@@ -183,5 +184,57 @@ function editProject($db, $postData) {
 
     }
 }
+
+
+/**
+ * deletes project from projects table by changing value from 0 to 1
+ *
+ * @param $db portfolio database
+ * @param $postData delete project admin form post data placeholder
+ */
+function deleteProject($db, $postData) {
+
+    if ($postData['delete'] != NULL && $postData['id'] != NULL) {
+        $deleteQuery = $db->prepare("UPDATE `projects` SET `deleted` = 1 WHERE `id` = :id");
+        $deleteQuery->bindParam(':id', $postData['id']);
+
+        $deleteQuery->execute();
+
+        header('Location: admin_portfolio.php');
+        exit();
+    }
+
+}
+
+/**
+ * redirects back to portfolio admin page if stuck
+ *
+ * @param $postData project admin form post data placeholder
+ */
+function redirectIfStuck ($postData) {
+
+    if ($postData['edit'] == NULL || $postData['id'] == NULL) {
+        header('Location: admin_portfolio.php');
+        exit();
+    }
+
+}
+
+
+/**
+ * populates single into form for editing using id number
+ *
+ * @param $db portfolio database
+ * @param $postData edit project admin form post data placeholder
+ * @return mixed returns data from row of id for editing
+ */
+function getSingleProject($db, $postData) {
+    $fetchQuery = $db->prepare("SELECT * FROM `projects` WHERE `id` = :id");
+    $fetchQuery->bindParam(':id', $postData['id']);
+    $fetchQuery->execute();
+    return $fetchQuery->fetch();
+}
+
+
 
 

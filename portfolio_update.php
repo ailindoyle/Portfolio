@@ -10,3 +10,5 @@ editProject($db, $_POST);
 
 header('Location: admin_portfolio.php');
 exit();
+
+?>
