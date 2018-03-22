@@ -1,23 +1,15 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query = $db->prepare("SELECT * FROM `home` ORDER BY `dateAdded` DESC LIMIT 1");
+$row = getHomeInfo($db);
 
-$query->execute();
-$row=$query->fetch();
+//$featuredRow = getFeaturedProjects($db);
 
-$headerTop = $row['headerTop'];
-$headerBottom = $row['headerBottom'];
-$summary = $row['summary'];
-
-$featuredQuery = $db->prepare("SELECT * FROM `projects` WHERE `featured` = 1");
-
-$featuredQuery->execute();
-$featuredRow = $featuredQuery->fetchAll();
 
 ?>
 
@@ -69,14 +61,14 @@ $featuredRow = $featuredQuery->fetchAll();
 <div class="hero">
     <div class="main container">
         <div class="hero-box description">
-            <h1><?php echo $headerTop?></h1>
-            <h3><?php echo $headerBottom?></h3>
+            <h1><?php echo $row['headerTop']?></h1>
+            <h3><?php echo $row['headerBottom']?></h3>
         </div>
     </div>
 </div>
 <div class="summary">
     <div class="container">
-        <p><?php echo $summary?></p>
+        <p><?php echo $row['summary']?></p>
     </div>
 </div>
 <div class="featured">
@@ -85,18 +77,7 @@ $featuredRow = $featuredQuery->fetchAll();
             <h2>FEATURED PROJECTS</h2>
         </div>
         <div>
-            <?php
-            foreach ($featuredRow as $featured) {
-                ?>
-                <div class="featured-project-links featured-project-one col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="<?php echo $featured['link']?>" target="_blank"><img src="<?php echo $featured['imageSource']?>" alt="<?php echo $featured['alternativeText']?>"></a>
-                        <p><?php echo $featured['projectDescription']?></p>
-                    </div>
-                </div>
-                <?php
-            }
-            ?>
+<!--            --><?php //echo displayFeaturedProjects($featuredRow); ?>
         </div>
     </div>
 </div>

@@ -1,6 +1,78 @@
 <?php
 
 
+
+////////////// HOME PAGE /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * get home data from db
+ *
+ * @param $db
+ * @return array
+ */
+function getHomeInfo($db) :array {
+    $query = $db->prepare("SELECT * FROM `home` ORDER BY `dateAdded` DESC LIMIT 1");
+    $query->execute();
+    return $query->fetch();
+}
+
+
+/**
+ * get featured projects from db
+ *
+ * @param $db
+ * @return mixed
+ */
+function getFeaturedProjects($db) {
+    $featuredQuery = $db->prepare("SELECT * FROM `projects` WHERE `featured` = 1");
+    $featuredQuery->execute();
+    return $query->fetch();
+}
+
+
+///**
+/// NOT WORKING
+///
+// * display featured projects
+// *
+// * @param $featuredRow
+// * @return string
+// */
+//function displayFeaturedProjects($featuredRow) {
+//    $result = ' ';
+//    foreach ($featuredRow as $featured) {
+//        $result .= "<div class='featured-project-links featured-project-one col-3 tb-col-2 mb-col-1'>
+//            <div class='project'>
+//                <a href='" . $featured['link'] . "' target='_blank'><img src='" . $featured['imageSource'] . "' alt='" . $featured['alternativeText'] . "'></a>
+//                <p>'" . $featured['projectDescription'] . "'</p>
+//            </div>
+//        </div> ";
+//    }
+//    return $result;
+//}
+
+
+/**
+ * inserts home info into home table of portfolio db from home admin form
+ *
+ * @param $db portfolio database
+ * @param $postData represents form post data to be input into the table
+ */
+function insertHome($db, $postData) {
+
+    $query= $db->prepare("INSERT INTO `home` (`headerTop`,`headerBottom`, `summary`) VALUES (:headerTop, :headerBottom, :summary);");
+
+    $query->bindParam(':headerTop', $postData['headerTop']);
+    $query->bindParam(':headerBottom', $postData['headerBottom']);
+    $query->bindParam(':summary', $postData['summary']);
+
+    $query->execute();
+
+}
+
+
+
 //////////// ABOUT PAGE CONTENT MANAGEMENT FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -178,23 +250,25 @@ function getPortfolioInfo($db) :array {
     return $query->fetch();
 }
 
-/**
- * displays projects into portfolio tab of website
- *
- * @param array $row single project contained within single row of project table
- * @return string html string to define / describe project image, link, description and alternative text
- */
-function displayProjects(array $row) :string {
-    $result = ' ';
-    foreach ($row as $project) {
-        $result .= "<div class='project-links col-3 tb-col-2 mb-col-1'><div class='project'>
-                <a href='" . $project['link'] . "' target='_blank'><img src='" . $project['imageSource'] . "' alt='" . $project['alternativeText'] . "'></a>
-                <p><?php echo'" . $project['projectDescription'] . "'</p>
-            </div>
-        </div> ";
-    }
-    return $result;
-}
+///**
+/// NOT WORKING
+///
+// * displays projects into portfolio tab of website
+// *
+// * @param array $row single project contained within single row of project table
+// * @return string html string to define / describe project image, link, description and alternative text
+// */
+//function displayProjects(array $row) :string {
+//    $result = ' ';
+//    foreach ($row as $project) {
+//        $result .= "<div class='project-links col-3 tb-col-2 mb-col-1'><div class='project'>
+//                <a href='" . $project['link'] . "' target='_blank'><img src='" . $project['imageSource'] . "' alt='" . $project['alternativeText'] . "'></a>
+//                <p><?php echo'" . $project['projectDescription'] . "'</p>
+//            </div>
+//        </div> ";
+//    }
+//    return $result;
+//}
 
 /**
  * inserts new projects from portfolio admin form to projects table in database
