@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="851f48d3-3a0d-42ba-9bd1-203a09ed7731" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
+      <change beforePath="$PROJECT_DIR$/home_insert.php" afterPath="$PROJECT_DIR$/home_insert.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,11 +103,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_portfolio.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_portfolio.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_portfolio.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+            <state relative-caret-position="64">
+              <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_insert.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home_insert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="66" lean-forward="false" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -184,16 +193,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about_skill_update.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about_skill_update.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -217,7 +216,6 @@
         <option value="$PROJECT_DIR$/about_main_insert.php" />
         <option value="$PROJECT_DIR$/portfolio_insert.php" />
         <option value="$PROJECT_DIR$/contact_insert.php" />
-        <option value="$PROJECT_DIR$/home_insert.php" />
         <option value="$PROJECT_DIR$/db_connect.php" />
         <option value="$PROJECT_DIR$/contact.php" />
         <option value="$PROJECT_DIR$/about.php" />
@@ -233,6 +231,7 @@
         <option value="$PROJECT_DIR$/featured_manage.php" />
         <option value="$PROJECT_DIR$/admin_portfolio.php" />
         <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/home_insert.php" />
       </list>
     </option>
   </component>
@@ -312,12 +311,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521716419620</updated>
       <workItem from="1521716421174" duration="15298000" />
-      <workItem from="1521805380963" duration="3233000" />
+      <workItem from="1521805380963" duration="3755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25588000" />
+    <option name="totallyTimeSpent" value="26110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1332" y="177" width="1805" height="914" extended-state="0" />
@@ -611,9 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <marker date="1521795844000" expanded="true" signature="150:253" ph="INSERT INTO `home`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -667,16 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home_insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <marker date="1521795844000" expanded="true" signature="150:253" ph="INSERT INTO `home`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,8 +899,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_portfolio.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        <state relative-caret-position="64">
+          <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="66" lean-forward="false" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
           <folding />
         </state>
       </provider>
