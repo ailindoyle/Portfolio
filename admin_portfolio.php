@@ -38,21 +38,21 @@ $project=$projectQuery->fetchAll();
                     <form method="post" action="portfolio_manage.php">
                         <tr>
                             <td>
-                                <?php echo $project['projectDescription']?>
+                                <?php echo $project['projectDescription']; ?>
                             </td>
                             <td>
-                                <?php echo $project['link']?>
+                                <?php echo $project['link']; ?>
                             </td>
                             <td>
-                                <?php echo $project['imageSource']?>
+                                <?php echo $project['imageSource']; ?>
                             </td>
                             <td>
-                                <?php echo $project['alternativeText']?>
+                                <?php echo $project['alternativeText']; ?>
                             </td>
                             <td>
                                 <input type="submit" name="edit" value="Edit">
                                 <input type="submit" name="delete" value="Delete">
-                                <input type="hidden" name="id" value="<?php echo $project['id']?>">
+                                <input type="hidden" name="id" value="<?php echo $project['id']; ?>">
                             </td>
                         </tr>
                     </form>

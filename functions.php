@@ -245,30 +245,28 @@ function getSingleSkill($db, $postData) {
  * @return array returns all projects, excludes deleted
  */
 function getPortfolioInfo($db) :array {
-    $projectQuery = $db->prepare("SELECT `link`, `imageSource`, `alternativeText`, `projectDescription` FROM `projects` WHERE `deleted` = 0");
+    $projectQuery = $db->prepare("SELECT `link`, `imageSource`, `alternativeText`, `projectDescription`, `id` FROM `projects` WHERE `deleted` = 0");
     $projectQuery->execute();
-    return $query->fetch();
+    return $projectQuery->fetchAll();
 }
 
-///**
-/// NOT WORKING
-///
-// * displays projects into portfolio tab of website
-// *
-// * @param array $row single project contained within single row of project table
-// * @return string html string to define / describe project image, link, description and alternative text
-// */
-//function displayProjects(array $row) :string {
-//    $result = ' ';
-//    foreach ($row as $project) {
-//        $result .= "<div class='project-links col-3 tb-col-2 mb-col-1'><div class='project'>
-//                <a href='" . $project['link'] . "' target='_blank'><img src='" . $project['imageSource'] . "' alt='" . $project['alternativeText'] . "'></a>
-//                <p><?php echo'" . $project['projectDescription'] . "'</p>
-//            </div>
-//        </div> ";
-//    }
-//    return $result;
-//}
+/**
+ * displays projects into portfolio tab of website
+ *
+ * @param array $row single project contained within single row of project table
+ * @return string html string to define / describe project image, link, description and alternative text
+ */
+function displayProjects(array $portfolioInfo) :string {
+    $result = ' ';
+    foreach ($portfolioInfo as $project) {
+        $result .= "<div class='project-links col-3 tb-col-2 mb-col-1'><div class='project'>
+                <a href='" . $project['link'] . "' target='_blank'><img src='" . $project['imageSource'] . "' alt='" . $project['alternativeText'] . "'></a>
+                <p>" . $project['projectDescription'] . "</p>
+            </div>
+        </div> ";
+    }
+    return $result;
+}
 
 /**
  * inserts new projects from portfolio admin form to projects table in database
