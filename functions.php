@@ -1,9 +1,6 @@
 <?php
 
-
-
-////////////// HOME PAGE /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////// HOME PAGE /////////////////////////////////////////////////////////////////////////////////
 
 /**
  * get home data from db
@@ -17,7 +14,6 @@ function getHomeInfo($db) :array {
     return $query->fetch();
 }
 
-
 /**
  * get featured projects from db
  *
@@ -29,7 +25,6 @@ function getFeaturedProjects($db) {
     $featuredQuery->execute();
     return $featuredQuery->fetchAll();
 }
-
 
 /**
  * display featured projects
@@ -49,7 +44,6 @@ function displayFeaturedProjects($featuredRow) {
     }
     return $result;
 }
-
 
 /**
  * inserts home info into home table of portfolio db from home admin form
@@ -277,7 +271,6 @@ function getSingleSkill($db, $postData) {
     return $fetchQuery->fetch();
 }
 
-
 /**
  * edits skill using form in manage skills
  *
@@ -296,11 +289,7 @@ function editSkill($db, $postData) {
 
 }
 
-
-
-
 ///////////////////// PORTFOLIO PAGE CONTENT MANAGEMENT FUNCTIONS /////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 /**
  * fetches project data from projects table in portfolio db
@@ -331,7 +320,6 @@ function displayProjects(array $portfolioInfo) :string {
     }
     return $result;
 }
-
 
 /**
  * Creates form in about admin page for each skill in the skills table of portfolio db
@@ -366,9 +354,6 @@ function createProjectForm(array $projectItem) :string {
     }
     return $result;
 }
-
-
-
 
 /**
  * inserts new projects from portfolio admin form to projects table in database
@@ -470,22 +455,3 @@ function insertContact($db, $postData) {
     $query->execute();
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
