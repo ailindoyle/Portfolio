@@ -64,5 +64,3 @@ $skillsRow = getSkills($db);
     </div>
 </body>
 </html>
-
-

@@ -7,7 +7,6 @@ if ($_SESSION['loggedIn']) {
     exit;
 }
 
-
 ?>
 
 <form method="post" action="account.php">

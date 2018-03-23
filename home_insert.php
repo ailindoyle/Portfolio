@@ -10,5 +10,4 @@ insertHome($db, $_POST);
 header('Location: admin_home.php');
 exit();
 
-
 ?>

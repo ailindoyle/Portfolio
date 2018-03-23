@@ -53,5 +53,3 @@ $projectItem = getPortfolioInfo($db);
     </div>
 </body>
 </html>
-
-

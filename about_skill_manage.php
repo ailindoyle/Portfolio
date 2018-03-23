@@ -46,5 +46,3 @@ $singleSkill = getSingleSkill($db, $_POST);
     </div>
 </body>
 </html>
-
-
