@@ -8,7 +8,7 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $projectQuery = $db->prepare("SELECT `projectDescription`, `link`, `imageSource`, `alternativeText`, `id` FROM `projects` WHERE `deleted` = 0");
 
 $projectQuery->execute();
-$project=$projectQuery->fetchAll();
+$projectItem=$projectQuery->fetchAll();
 
 ?>
 
@@ -33,7 +33,7 @@ $project=$projectQuery->fetchAll();
                     <th>Operations</th>
                 </tr>
                 <?php
-                foreach ($project as $project) {
+                foreach ($projectItem as $project) {
                     ?>
                     <form method="post" action="portfolio_manage.php">
                         <tr>

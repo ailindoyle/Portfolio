@@ -12,3 +12,5 @@ if ($_POST['edit'] != NULL && $_POST['id'] != NULL) {
 
 header('Location: admin_about.php');
 exit();
+
+?>

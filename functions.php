@@ -153,7 +153,7 @@ function createSkillsForm(array $skillsRow) :string {
                     <input type='submit' name='edit' value='Edit'>
                     <input type='submit' name='delete' value='Delete'>
                     <input type='hidden' name='id' value='" . $skill['id'] . "'>
-                </td>
+                </td>edit
             </tr>
         </form>";
     }
@@ -242,7 +242,7 @@ function editSkill($db, $postData) {
  * @return array returns all projects, excludes deleted
  */
 function getPortfolioInfo($db) :array {
-    $projectQuery = $db->prepare("SELECT `link`, `imageSource`, `alternativeText`, `projectDescription`, `id` FROM `projects` WHERE `deleted` = 0");
+    $projectQuery = $db->prepare("SELECT `id`, `link`, `imageSource`, `alternativeText`, `projectDescription`, `id` FROM `projects` WHERE `deleted` = 0");
     $projectQuery->execute();
     return $projectQuery->fetchAll();
 }
@@ -285,28 +285,6 @@ function insertProject($db, $postData) {
 }
 
 /**
- * edits project using form in portfolio update
- *
- * @param $db portfolio database
- * @param $postData edit project admin form post data placeholder
- */
-function editProject($db, $postData) {
-
-    if ($postData['id'] != NULL) {
-
-        $updateQuery = $db->prepare("UPDATE `projects` SET `projectDescription` = :projectDescription, `link` = :link, `imageSource` = :imageSource, `alternativeText` = :alternativeText WHERE `id` = :id");
-        $updateQuery->bindParam(':id', $postData['id']);
-        $updateQuery->bindParam(':projectDescription', $postData['projectDescription']);
-        $updateQuery->bindParam(':link', $postData['link']);
-        $updateQuery->bindParam(':imageSource', $postData['imageSource']);
-        $updateQuery->bindParam(':alternativeText', $postData['alternativeText']);
-
-        $updateQuery->execute();
-
-    }
-}
-
-/**
  * deletes project from projects table by changing value from 0 to 1
  *
  * @param $db portfolio database
@@ -314,15 +292,13 @@ function editProject($db, $postData) {
  */
 function deleteProject($db, $postData) {
 
-    if ($postData['delete'] != NULL && $postData['id'] != NULL) {
-        $deleteQuery = $db->prepare("UPDATE `projects` SET `deleted` = 1 WHERE `id` = :id");
-        $deleteQuery->bindParam(':id', $postData['id']);
+    $deleteQuery = $db->prepare("UPDATE `projects` SET `deleted` = 1 WHERE `id` = :id");
+    $deleteQuery->bindParam(':id', $postData['id']);
 
-        $deleteQuery->execute();
+    $deleteQuery->execute();
 
-        header('Location: admin_portfolio.php');
-        exit();
-    }
+    header('Location: admin_portfolio.php');
+    exit();
 
 }
 
@@ -337,9 +313,27 @@ function getSingleProject($db, $postData) {
     $fetchQuery = $db->prepare("SELECT `id`, `projectDescription`, `link`, `imageSource`, `alternativeText` FROM `projects` WHERE `id` = :id");
     $fetchQuery->bindParam(':id', $postData['id']);
     $fetchQuery->execute();
-    return $fetchQuery->fetchAll();
+    return $fetchQuery->fetch();
 }
 
+/**
+ * edits project using form in portfolio update
+ *
+ * @param $db portfolio database
+ * @param $postData edit project admin form post data placeholder
+ */
+function editProject($db, $postData) {
+
+    $updateQuery = $db->prepare("UPDATE `projects` SET `projectDescription` = :projectDescription, `link` = :link, `imageSource` = :imageSource, `alternativeText` = :alternativeText WHERE `id` = :id");
+    $updateQuery->bindParam(':id', $postData['id']);
+    $updateQuery->bindParam(':projectDescription', $postData['projectDescription']);
+    $updateQuery->bindParam(':link', $postData['link']);
+    $updateQuery->bindParam(':imageSource', $postData['imageSource']);
+    $updateQuery->bindParam(':alternativeText', $postData['alternativeText']);
+
+    $updateQuery->execute();
+
+}
 
 ///////////////////// CONTACT PAGE CONTENT MANAGEMENT FUNCTIONS /////////////////////////////////////////////////////////////////////////////////////////////////
 

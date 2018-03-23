@@ -17,7 +17,7 @@ $singleSkill = getSingleSkill($db, $_POST);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Caitlin Doyle | Admin</title>
+    <title>Caitlin Doyle | Admin Edit Skills</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
