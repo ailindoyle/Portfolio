@@ -106,7 +106,37 @@ function createFeaturedForm(array $featuredRow) :string {
     return $result;
 }
 
+/**
+ * removes project from featured by changing data value to 0
+ *
+ * @param $db portfolio database
+ * @param $postData represents form post data to be input into the table
+ */
+function removeFeatured($db, $postData) {
+    $removeQuery = $db->prepare("UPDATE `projects` SET `featured` = 0 WHERE `id` = :id");
+    $removeQuery->bindParam(':id',  $postData['id']);
 
+    $removeQuery->execute();
+
+    header('Location: admin_home.php');
+    exit();
+}
+
+/**
+ * adds project to featured by changing data value to 1
+ *
+ * @param $db portfolio database
+ * @param $postData represents form post data to be input into the table
+ */
+function addFeatured($db, $postData) {
+    $addQuery = $db->prepare("UPDATE `projects` SET `featured` = 1 WHERE `id` = :id");
+    $addQuery->bindParam(':id',  $postData['id']);
+
+    $addQuery->execute();
+
+    header('Location: admin_home.php');
+    exit();
+}
 
 //////////// ABOUT PAGE CONTENT MANAGEMENT FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////////
 
