@@ -45,36 +45,7 @@ $featuredRow = getPortfolioInfo($db);
                 <th>Featured</th>
                 <th>Operations</th>
             </tr>
-            <?php
-            foreach ($featuredRow as $featured) {
-                ?>
-                <form method="post" action="featured_manage.php">
-                    <tr>
-                        <td>
-                            <?php echo $featured['projectDescription']?>
-                        </td>
-                        <td>
-                            <?php echo $featured['link']?>
-                        </td>
-                        <td>
-                            <?php echo $featured['imageSource']?>
-                        </td>
-                        <td>
-                            <?php echo $featured['alternativeText']?>
-                        </td>
-                        <td>
-                            <?php echo $featured['featured']?>
-                        </td>
-                        <td>
-                            <input type="submit" name="add" value="Add">
-                            <input type="submit" name="remove" value="Remove">
-                            <input type="hidden" name="id" value="<?php echo $featured['id']?>">
-                        </td>
-                    </tr>
-                </form>
-                <?php
-            }
-            ?>
+            <?php echo createFeaturedForm($featuredRow);?>
         </table>
     </div>
     <div class="container">

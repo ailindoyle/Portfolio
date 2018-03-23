@@ -69,6 +69,43 @@ function insertHome($db, $postData) {
 
 }
 
+/**
+ * Creates form in about admin page for each skill in the skills table of portfolio db
+ *
+ * @param array $skillsRow each row of the table as individual skill includes data required by a tags in html
+ * @return string returns string that defines html table with edit and delete buttons
+ */
+function createFeaturedForm(array $featuredRow) :string {
+    $result = ' ';
+    foreach ($featuredRow as $featured) {
+        $result .= "<form method='post' action='featured_manage.php'>
+            <tr>
+                <td>
+                    " . $featured['projectDescription'] . "
+                </td>
+                <td>
+                    " . $featured['link'] . "
+                </td>
+                <td>
+                    " . $featured['imageSource'] . "
+                </td>
+                <td>
+                    " . $featured['alternativeText'] . "
+                </td>
+                <td>
+                    " . $featured['featured'] . "
+                </td>
+                <td>
+                    <input type='submit' name='add' value='Add'>
+                    <input type='submit' name='remove' value='Remove'>
+                    <input type='hidden' name='id' value='" . $featured['id'] . "'>
+                </td>edit
+            </tr>
+        </form>";
+    }
+    return $result;
+}
+
 
 
 //////////// ABOUT PAGE CONTENT MANAGEMENT FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -242,7 +279,7 @@ function editSkill($db, $postData) {
  * @return array returns all projects, excludes deleted
  */
 function getPortfolioInfo($db) :array {
-    $projectQuery = $db->prepare("SELECT `id`, `link`, `imageSource`, `alternativeText`, `projectDescription`, `id` FROM `projects` WHERE `deleted` = 0");
+    $projectQuery = $db->prepare("SELECT `id`, `link`, `imageSource`, `alternativeText`, `projectDescription`, `featured` FROM `projects` WHERE `deleted` = 0");
     $projectQuery->execute();
     return $projectQuery->fetchAll();
 }
