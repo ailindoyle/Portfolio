@@ -10,7 +10,7 @@ deleteSkill($db, $_POST);
 
 redirectIfStuck ($_POST);
 
-$row = getSingleSkill($db, $_POST);
+$singleSkill = getSingleSkill($db, $_POST);
 
 ?>
 
@@ -28,11 +28,11 @@ $row = getSingleSkill($db, $_POST);
         <h2>EDIT SKILL</h2>
         <form method="post" action="about_skill_update.php">
             Skills Name:<br>
-            <input type="text" name="skillName" value="<?php echo $row['skillName']?>"><br>
+            <input type="text" name="skillName" value="<?php echo $singleSkill['skillName']?>"><br>
             Image Source:<br>
-            <input type="text" name="imageSource" value="<?php echo $row['imageSource']?>"><br>
+            <input type="text" name="imageSource" value="<?php echo $singleSkill['imageSource']?>"><br>
             Alternative Image Text:<br>
-            <input type="text" name="alternative" value="<?php echo $row['alternative']?>"><br><br>
+            <input type="text" name="alternative" value="<?php echo $singleSkill['alternative']?>"><br><br>
             <input type="submit" value="Save">
             <input type="hidden" name="id" value="<?php echo $_POST['id']?>">
         </form>

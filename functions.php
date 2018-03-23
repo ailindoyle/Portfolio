@@ -12,7 +12,7 @@
  * @return array
  */
 function getHomeInfo($db) :array {
-    $query = $db->prepare("SELECT * FROM `home` ORDER BY `dateAdded` DESC LIMIT 1");
+    $query = $db->prepare("SELECT `headerTop`, `headerBottom`, `summary` FROM `home` ORDER BY `dateAdded` DESC LIMIT 1");
     $query->execute();
     return $query->fetch();
 }
@@ -25,7 +25,7 @@ function getHomeInfo($db) :array {
  * @return mixed
  */
 function getFeaturedProjects($db) {
-    $featuredQuery = $db->prepare("SELECT * FROM `projects` WHERE `featured` = 1");
+    $featuredQuery = $db->prepare("SELECT `link`, `imageSource`, `alternativeText`, `projectDescription` FROM `projects` WHERE `featured` = 1");
     $featuredQuery->execute();
     return $query->fetch();
 }
@@ -82,7 +82,7 @@ function insertHome($db, $postData) {
  * @return array most recent row in about table
  */
 function getAboutInfo($db) :array {
-    $query = $db->prepare("SELECT * FROM `about` WHERE `deleted` = 0 ORDER BY `dateAdded` DESC LIMIT 1");
+    $query = $db->prepare("SELECT `photoSource`, `photoAlt`, `description` FROM `about` WHERE `deleted` = 0 ORDER BY `dateAdded` DESC LIMIT 1");
     $query->execute();
     return $query->fetch();
 }
@@ -112,7 +112,7 @@ function insertAboutToDb($db, $postData) {
  * @return array returns all skills excluding deleted
  */
 function getSkills($db) :array {
-    $skillsQuery = $db->prepare("SELECT * FROM `skills` WHERE `deleted` = 0");
+    $skillsQuery = $db->prepare("SELECT `imageSource`, `alternative` FROM `skills` WHERE `deleted` = 0");
     $skillsQuery->execute();
     return $skillsQuery->fetchAll();
 }
@@ -228,7 +228,7 @@ function deleteSkill($db, $postData) {
  * @return mixed returns data from row of id for editing
  */
 function getSingleSkill($db, $postData) {
-    $fetchQuery = $db->prepare("SELECT * FROM `skills` WHERE `id` = :id");
+    $fetchQuery = $db->prepare("SELECT `imageSource`, `alternative` FROM `skills` WHERE `id` = :id");
     $fetchQuery->bindParam(':id', $postData['id']);
     $fetchQuery->execute();
     return $fetchQuery->fetch();
@@ -245,7 +245,7 @@ function getSingleSkill($db, $postData) {
  * @return array returns all projects, excludes deleted
  */
 function getPortfolioInfo($db) :array {
-    $projectQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
+    $projectQuery = $db->prepare("SELECT `link`, `imageSource`, `alternativeText`, `projectDescription` FROM `projects` WHERE `deleted` = 0");
     $projectQuery->execute();
     return $query->fetch();
 }
@@ -353,7 +353,7 @@ function redirectIfStuck ($postData) {
  * @return mixed returns data from row of id for editing
  */
 function getSingleProject($db, $postData) {
-    $fetchQuery = $db->prepare("SELECT * FROM `projects` WHERE `id` = :id");
+    $fetchQuery = $db->prepare("SELECT `id`, `projectDescription`, `link`, `imageSource`, `alternativeText` FROM `projects` WHERE `id` = :id");
     $fetchQuery->bindParam(':id', $postData['id']);
     $fetchQuery->execute();
     return $fetchQuery->fetch();
@@ -369,7 +369,7 @@ function getSingleProject($db, $postData) {
  * @return array returns all contact data, excludes deleted
  */
 function getContactInfo($db) :array {
-    $query = $db->prepare("SELECT * FROM `contact` ORDER BY `dateAdded` DESC LIMIT 1");
+    $query = $db->prepare("SELECT `description`, `email` FROM `contact` ORDER BY `dateAdded` DESC LIMIT 1");
     $query->execute();
     return $query->fetch();
 }

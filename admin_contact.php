@@ -6,7 +6,7 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$row = getContactInfo($db);
+$contactInfo = getContactInfo($db);
 
 
 ?>
@@ -25,9 +25,9 @@ $row = getContactInfo($db);
         <h2>CONTACT</h2>
         <form method="post" action="contact_insert.php">
             Description:<br>
-            <input type="text" name="description" value="<?php echo $row['description']?>"><br>
+            <input type="text" name="description" value="<?php echo $contactInfo['description']?>"><br>
             Email address:<br>
-            <input type="text" name="email" value="<?php echo $row['email']?>"><br>
+            <input type="text" name="email" value="<?php echo $contactInfo['email']?>"><br>
             <input type="submit" value="Save">
         </form>
     </div>

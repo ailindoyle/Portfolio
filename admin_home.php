@@ -6,7 +6,7 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$row = getHomeInfo($db);
+$homeInfo = getHomeInfo($db);
 
 $featuredRow = getPortfolioInfo($db);
 
@@ -26,11 +26,11 @@ $featuredRow = getPortfolioInfo($db);
         <h2>HOME</h2>
         <form method="post" action="home_insert.php">
             Header Top:<br>
-            <input type="text" name="headerTop" value="<?php echo $row['headerTop']?>"><br>
+            <input type="text" name="headerTop" value="<?php echo $homeInfo['headerTop']?>"><br>
             Header Bottom:<br>
-            <input type="text" name="headerBottom" value="<?php echo $row['headerBottom']?>"><br>
+            <input type="text" name="headerBottom" value="<?php echo $homeInfo['headerBottom']?>"><br>
             Summary:<br>
-            <input type="text" name="summary" value="<?php echo $row['summary']?>"><br><br>
+            <input type="text" name="summary" value="<?php echo $homeInfo['summary']?>"><br><br>
             <input type="submit" value="Save">
         </form>
     </div>

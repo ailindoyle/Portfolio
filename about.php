@@ -6,8 +6,7 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$row = getAboutInfo($db);
-
+$aboutInfo = getAboutInfo($db);
 $skillsRow = getSkills($db);
 
 ?>
@@ -70,10 +69,10 @@ $skillsRow = getSkills($db);
     <div class="container">
         <div class="description">
             <div class="picture">
-                <img src="<?php echo $row['photoSource'] ?>" alt="<?php echo $row['photoAlt'] ?>">
+                <img src="<?php echo $aboutInfo['photoSource'] ?>" alt="<?php echo $aboutInfo['photoAlt'] ?>">
             </div>
             <div class="about-me">
-                <p><?php echo $row['description'] ?></p>
+                <p><?php echo $aboutInfo['description'] ?></p>
             </div>
         </div>
     </div>
@@ -83,7 +82,6 @@ $skillsRow = getSkills($db);
         <div class="skills-header">
             <h2>SKILLS AND TECHNOLOGIES</h2>
         </div>
-
         <div class="logo-deck">
             <?php echo displaySkills($skillsRow); ?>
         </div>

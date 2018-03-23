@@ -6,7 +6,7 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-//$row = getPortfolioInfo($db);
+//$portfolioInfo = getPortfolioInfo($db);
 
 ?>
 
@@ -62,7 +62,7 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
                 <h2>PROJECTS</h2>
             </div>
             <div>
-<!--                --><?php //echo displayProjects($row); ?>
+<!--                --><?php //echo displayProjects($portfolioInfo); ?>
             </div>
         </div>
     </div>

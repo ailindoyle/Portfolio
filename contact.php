@@ -6,7 +6,7 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$row = getContactInfo($db);
+$contactInfo = getContactInfo($db);
 
 ?>
 
@@ -67,8 +67,8 @@ $row = getContactInfo($db);
 <div class="contact-info">
     <div class="container">
         <div class="contact">
-            <h2><?php echo $row['description']?></h2>
-            <h2><?php echo $row['email']?></h2>
+            <h2><?php echo $contactInfo['description']?></h2>
+            <h2><?php echo $contactInfo['email']?></h2>
             <ul class="social-media">
                 <li>
                     <a href="https://www.linkedin.com/in/ailin-doyle-304abbb0/" target="_blank"><img src="images/icons8-linkedin-48.png" alt="LinkedIn"/></a>
