@@ -27,30 +27,28 @@ function getHomeInfo($db) :array {
 function getFeaturedProjects($db) {
     $featuredQuery = $db->prepare("SELECT `link`, `imageSource`, `alternativeText`, `projectDescription` FROM `projects` WHERE `featured` = 1");
     $featuredQuery->execute();
-    return $query->fetch();
+    return $featuredQuery->fetchAll();
 }
 
 
-///**
-/// NOT WORKING
-///
-// * display featured projects
-// *
-// * @param $featuredRow
-// * @return string
-// */
-//function displayFeaturedProjects($featuredRow) {
-//    $result = ' ';
-//    foreach ($featuredRow as $featured) {
-//        $result .= "<div class='featured-project-links featured-project-one col-3 tb-col-2 mb-col-1'>
-//            <div class='project'>
-//                <a href='" . $featured['link'] . "' target='_blank'><img src='" . $featured['imageSource'] . "' alt='" . $featured['alternativeText'] . "'></a>
-//                <p>'" . $featured['projectDescription'] . "'</p>
-//            </div>
-//        </div> ";
-//    }
-//    return $result;
-//}
+/**
+ * display featured projects
+ *
+ * @param $featuredRow
+ * @return string
+ */
+function displayFeaturedProjects($featuredRow) {
+    $result = ' ';
+    foreach ($featuredRow as $featured) {
+        $result .= "<div class='featured-project-links featured-project-one col-3 tb-col-2 mb-col-1'>
+            <div class='project'>
+                <a href='" . $featured['link'] . "' target='_blank'><img src='" . $featured['imageSource'] . "' alt='" . $featured['alternativeText'] . "'></a>
+                <p>" . $featured['projectDescription'] . "</p>
+            </div>
+        </div> ";
+    }
+    return $result;
+}
 
 
 /**

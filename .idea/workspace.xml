@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="851f48d3-3a0d-42ba-9bd1-203a09ed7731" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/admin_portfolio.php" afterPath="$PROJECT_DIR$/admin_portfolio.php" />
       <change beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change beforePath="$PROJECT_DIR$/portfolio.php" afterPath="$PROJECT_DIR$/portfolio.php" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,84 +14,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="254" column="2" lean-forward="true" selection-start-line="254" selection-start-column="2" selection-end-line="254" selection-end-column="2" />
+            <state relative-caret-position="479">
+              <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
               <folding>
-                <marker date="1521799853000" expanded="true" signature="291:382" ph="SELECT * FRO... home" />
-                <marker date="1521799853000" expanded="true" signature="587:693" ph="SELECT * FRO... projects" />
-                <marker date="1521799853000" expanded="true" signature="1091:1160" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1208" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1209" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1213" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1222" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1247" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1248" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1252" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1312" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1313" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1317" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1091:1394" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1127:1154" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1127:1155" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1127:1156" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1127:1160" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="1691:1794" ph="INSERT INTO `home`... " />
-                <marker date="1521799853000" expanded="true" signature="2391:2505" ph="SELECT * FRO... about" />
-                <marker date="1521799853000" expanded="true" signature="2841:2948" ph="INSERT INTO `about`... " />
-                <marker date="1521799853000" expanded="true" signature="3411:3480" ph="SELECT * FRO... skills" />
-                <marker date="1521799853000" expanded="true" signature="4580:4644" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4580:4760" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4580:5091" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4580:5170" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4597:4644" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4618:4644" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4709:4741" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4709:4760" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4802:4824" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4802:4834" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4802:4874" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4895:4928" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="4895:5091" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="5464:5477" ph="INSERT INTO `about`... " />
-                <marker date="1521799853000" expanded="true" signature="5464:5574" ph="INSERT INTO `skills`... " />
-                <marker date="1521799853000" expanded="true" signature="6057:6178" ph="UPDATE `skills`... " />
-                <marker date="1521799853000" expanded="true" signature="6816:6866" ph="UPDATE `skills`... " />
-                <marker date="1521799853000" expanded="true" signature="7327:7393" ph="SELECT * FRO... skills" />
-                <marker date="1521799853000" expanded="true" signature="7914:8025" ph="SELECT * FRO... projects" />
-                <marker date="1521799853000" expanded="true" signature="8537:8589" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8617" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8636" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8637" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8641" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8673" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8674" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8677" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8736" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8740" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8537:8811" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8558:8584" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8558:8585" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="8558:8589" ph="..." />
-                <marker date="1521799853000" expanded="true" signature="9102:9255" ph="INSERT INTO `projects`... " />
-                <marker date="1521799853000" expanded="true" signature="9828:9993" ph="UPDATE `projects`... " />
-                <marker date="1521799853000" expanded="true" signature="10732:10784" ph="UPDATE `projects`... " />
-                <marker date="1521799853000" expanded="true" signature="11538:11646" ph="SELECT * FRO... projects" />
-                <marker date="1521799853000" expanded="true" signature="12158:12236" ph="SELECT * FRO... projects" />
-                <marker date="1521799853000" expanded="true" signature="12562:12575" ph="INSERT INTO `skills`... " />
-                <marker date="1521799853000" expanded="true" signature="12562:12637" ph="INSERT INTO `contact`... " />
+                <marker date="1521800063000" expanded="true" signature="291:382" ph="SELECT * FRO... home" />
+                <marker date="1521800063000" expanded="true" signature="587:693" ph="SELECT * FRO... projects" />
+                <marker date="1521800063000" expanded="true" signature="1062:1127" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1175" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1176" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1180" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1189" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1214" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1215" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1219" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1277" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1281" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1062:1353" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1096:1121" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1096:1122" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1096:1123" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1096:1127" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="1644:1747" ph="INSERT INTO `home`... " />
+                <marker date="1521800063000" expanded="true" signature="2344:2458" ph="SELECT * FRO... about" />
+                <marker date="1521800063000" expanded="true" signature="2794:2901" ph="INSERT INTO `about`... " />
+                <marker date="1521800063000" expanded="true" signature="3364:3433" ph="SELECT * FRO... skills" />
+                <marker date="1521800063000" expanded="true" signature="4533:4597" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4533:4713" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4533:5044" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4533:5123" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4550:4597" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4571:4597" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4662:4694" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4662:4713" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4755:4777" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4755:4787" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4755:4827" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4848:4881" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="4848:5044" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="5417:5430" ph="INSERT INTO `about`... " />
+                <marker date="1521800063000" expanded="true" signature="5417:5527" ph="INSERT INTO `skills`... " />
+                <marker date="1521800063000" expanded="true" signature="6010:6131" ph="UPDATE `skills`... " />
+                <marker date="1521800063000" expanded="true" signature="6769:6819" ph="UPDATE `skills`... " />
+                <marker date="1521800063000" expanded="true" signature="7280:7346" ph="SELECT * FRO... skills" />
+                <marker date="1521800063000" expanded="true" signature="7867:7978" ph="SELECT * FRO... projects" />
+                <marker date="1521800063000" expanded="true" signature="8490:8542" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8570" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8589" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8590" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8594" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8626" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8627" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8630" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8689" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8693" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8490:8764" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8511:8537" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8511:8538" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="8511:8542" ph="..." />
+                <marker date="1521800063000" expanded="true" signature="9055:9208" ph="INSERT INTO `projects`... " />
+                <marker date="1521800063000" expanded="true" signature="9781:9946" ph="UPDATE `projects`... " />
+                <marker date="1521800063000" expanded="true" signature="10685:10737" ph="UPDATE `projects`... " />
+                <marker date="1521800063000" expanded="true" signature="11491:11599" ph="SELECT * FRO... projects" />
+                <marker date="1521800063000" expanded="true" signature="12111:12189" ph="SELECT * FRO... projects" />
+                <marker date="1521800063000" expanded="true" signature="12515:12528" ph="INSERT INTO `skills`... " />
+                <marker date="1521800063000" expanded="true" signature="12515:12590" ph="INSERT INTO `contact`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portfolio.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-431">
+              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="portfolio.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portfolio.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="67" column="10" lean-forward="true" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+            <state relative-caret-position="795">
+              <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -123,16 +131,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
               <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="portfolio_update.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portfolio_update.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -198,7 +196,6 @@
         <option value="$PROJECT_DIR$/portfolio_update.php" />
         <option value="$PROJECT_DIR$/about_skill_update.php" />
         <option value="$PROJECT_DIR$/contact_insert.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/home_insert.php" />
         <option value="$PROJECT_DIR$/db_connect.php" />
         <option value="$PROJECT_DIR$/contact.php" />
@@ -210,6 +207,7 @@
         <option value="$PROJECT_DIR$/featured_manage.php" />
         <option value="$PROJECT_DIR$/admin_portfolio.php" />
         <option value="$PROJECT_DIR$/portfolio.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
@@ -294,7 +292,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18250000" />
+    <option name="totallyTimeSpent" value="18425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1332" y="177" width="1805" height="914" extended-state="0" />
@@ -480,68 +478,67 @@
         <state relative-caret-position="461">
           <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <marker date="1521799853000" expanded="true" signature="291:382" ph="SELECT * FRO... home" />
-            <marker date="1521799853000" expanded="true" signature="587:693" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="1091:1160" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1208" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1209" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1213" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1222" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1247" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1248" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1252" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1312" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1313" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1317" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1394" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1154" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1155" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1156" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1160" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1691:1794" ph="INSERT INTO `home`... " />
-            <marker date="1521799853000" expanded="true" signature="2391:2505" ph="SELECT * FRO... about" />
-            <marker date="1521799853000" expanded="true" signature="2841:2948" ph="INSERT INTO `about`... " />
-            <marker date="1521799853000" expanded="true" signature="3411:3480" ph="SELECT * FRO... skills" />
-            <marker date="1521799853000" expanded="true" signature="4580:4644" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4580:4760" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4580:5091" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4580:5170" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4597:4644" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4618:4644" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4709:4741" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4709:4760" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4802:4824" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4802:4834" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4802:4874" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4895:4928" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4895:5091" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="5464:5477" ph="INSERT INTO `about`... " />
-            <marker date="1521799853000" expanded="true" signature="5464:5574" ph="INSERT INTO `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="6057:6178" ph="UPDATE `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="6816:6866" ph="UPDATE `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="7327:7393" ph="SELECT * FRO... skills" />
-            <marker date="1521799853000" expanded="true" signature="7914:8025" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="8537:8589" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8617" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8636" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8637" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8641" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8673" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8674" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8677" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8736" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8740" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8811" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8558:8584" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8558:8585" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8558:8589" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="9102:9255" ph="INSERT INTO `projects`... " />
-            <marker date="1521799853000" expanded="true" signature="9828:9993" ph="UPDATE `projects`... " />
-            <marker date="1521799853000" expanded="true" signature="10732:10784" ph="UPDATE `projects`... " />
-            <marker date="1521799853000" expanded="true" signature="11538:11646" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="12158:12236" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="12562:12575" ph="INSERT INTO `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="12562:12637" ph="INSERT INTO `contact`... " />
+            <marker date="1521800063000" expanded="true" signature="291:382" ph="SELECT * FRO... home" />
+            <marker date="1521800063000" expanded="true" signature="587:693" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="1062:1127" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1175" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1176" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1180" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1189" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1214" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1215" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1219" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1277" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1281" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1353" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1121" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1122" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1123" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1127" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1644:1747" ph="INSERT INTO `home`... " />
+            <marker date="1521800063000" expanded="true" signature="2344:2458" ph="SELECT * FRO... about" />
+            <marker date="1521800063000" expanded="true" signature="2794:2901" ph="INSERT INTO `about`... " />
+            <marker date="1521800063000" expanded="true" signature="3364:3433" ph="SELECT * FRO... skills" />
+            <marker date="1521800063000" expanded="true" signature="4533:4597" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4533:4713" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4533:5044" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4533:5123" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4550:4597" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4571:4597" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4662:4694" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4662:4713" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4755:4777" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4755:4787" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4755:4827" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4848:4881" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4848:5044" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="5417:5430" ph="INSERT INTO `about`... " />
+            <marker date="1521800063000" expanded="true" signature="5417:5527" ph="INSERT INTO `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="6010:6131" ph="UPDATE `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="6769:6819" ph="UPDATE `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="7280:7346" ph="SELECT * FRO... skills" />
+            <marker date="1521800063000" expanded="true" signature="7867:7978" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="8490:8542" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8570" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8589" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8590" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8594" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8626" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8627" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8630" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8689" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8693" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8764" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8511:8537" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8511:8538" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8511:8542" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="9055:9208" ph="INSERT INTO `projects`... " />
+            <marker date="1521800063000" expanded="true" signature="9781:9946" ph="UPDATE `projects`... " />
+            <marker date="1521800063000" expanded="true" signature="10685:10737" ph="UPDATE `projects`... " />
+            <marker date="1521800063000" expanded="true" signature="11491:11599" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="12111:12189" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="12515:12528" ph="INSERT INTO `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="12515:12590" ph="INSERT INTO `contact`... " />
           </folding>
         </state>
       </provider>
@@ -619,14 +616,6 @@
           <folding>
             <marker date="1521795844000" expanded="true" signature="150:253" ph="INSERT INTO `home`... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,82 +760,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
+    <entry file="file://$PROJECT_DIR$/portfolio.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="254" column="2" lean-forward="true" selection-start-line="254" selection-start-column="2" selection-end-line="254" selection-end-column="2" />
-          <folding>
-            <marker date="1521799853000" expanded="true" signature="291:382" ph="SELECT * FRO... home" />
-            <marker date="1521799853000" expanded="true" signature="587:693" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="1091:1160" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1208" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1209" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1213" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1222" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1247" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1248" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1252" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1312" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1313" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1317" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1091:1394" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1154" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1155" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1156" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1127:1160" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="1691:1794" ph="INSERT INTO `home`... " />
-            <marker date="1521799853000" expanded="true" signature="2391:2505" ph="SELECT * FRO... about" />
-            <marker date="1521799853000" expanded="true" signature="2841:2948" ph="INSERT INTO `about`... " />
-            <marker date="1521799853000" expanded="true" signature="3411:3480" ph="SELECT * FRO... skills" />
-            <marker date="1521799853000" expanded="true" signature="4580:4644" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4580:4760" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4580:5091" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4580:5170" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4597:4644" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4618:4644" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4709:4741" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4709:4760" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4802:4824" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4802:4834" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4802:4874" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4895:4928" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="4895:5091" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="5464:5477" ph="INSERT INTO `about`... " />
-            <marker date="1521799853000" expanded="true" signature="5464:5574" ph="INSERT INTO `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="6057:6178" ph="UPDATE `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="6816:6866" ph="UPDATE `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="7327:7393" ph="SELECT * FRO... skills" />
-            <marker date="1521799853000" expanded="true" signature="7914:8025" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="8537:8589" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8617" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8636" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8637" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8641" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8673" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8674" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8677" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8736" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8740" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8537:8811" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8558:8584" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8558:8585" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="8558:8589" ph="..." />
-            <marker date="1521799853000" expanded="true" signature="9102:9255" ph="INSERT INTO `projects`... " />
-            <marker date="1521799853000" expanded="true" signature="9828:9993" ph="UPDATE `projects`... " />
-            <marker date="1521799853000" expanded="true" signature="10732:10784" ph="UPDATE `projects`... " />
-            <marker date="1521799853000" expanded="true" signature="11538:11646" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="12158:12236" ph="SELECT * FRO... projects" />
-            <marker date="1521799853000" expanded="true" signature="12562:12575" ph="INSERT INTO `skills`... " />
-            <marker date="1521799853000" expanded="true" signature="12562:12637" ph="INSERT INTO `contact`... " />
-          </folding>
+        <state relative-caret-position="795">
+          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="67" column="10" lean-forward="true" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+        <state relative-caret-position="-431">
+          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding>
+            <marker date="1521800063000" expanded="true" signature="291:382" ph="SELECT * FRO... home" />
+            <marker date="1521800063000" expanded="true" signature="587:693" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="1062:1127" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1175" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1176" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1180" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1189" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1214" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1215" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1219" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1277" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1281" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1062:1353" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1121" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1122" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1123" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1096:1127" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="1644:1747" ph="INSERT INTO `home`... " />
+            <marker date="1521800063000" expanded="true" signature="2344:2458" ph="SELECT * FRO... about" />
+            <marker date="1521800063000" expanded="true" signature="2794:2901" ph="INSERT INTO `about`... " />
+            <marker date="1521800063000" expanded="true" signature="3364:3433" ph="SELECT * FRO... skills" />
+            <marker date="1521800063000" expanded="true" signature="4533:4597" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4533:4713" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4533:5044" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4533:5123" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4550:4597" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4571:4597" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4662:4694" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4662:4713" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4755:4777" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4755:4787" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4755:4827" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4848:4881" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="4848:5044" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="5417:5430" ph="INSERT INTO `about`... " />
+            <marker date="1521800063000" expanded="true" signature="5417:5527" ph="INSERT INTO `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="6010:6131" ph="UPDATE `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="6769:6819" ph="UPDATE `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="7280:7346" ph="SELECT * FRO... skills" />
+            <marker date="1521800063000" expanded="true" signature="7867:7978" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="8490:8542" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8570" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8589" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8590" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8594" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8626" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8627" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8630" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8689" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8693" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8490:8764" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8511:8537" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8511:8538" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="8511:8542" ph="..." />
+            <marker date="1521800063000" expanded="true" signature="9055:9208" ph="INSERT INTO `projects`... " />
+            <marker date="1521800063000" expanded="true" signature="9781:9946" ph="UPDATE `projects`... " />
+            <marker date="1521800063000" expanded="true" signature="10685:10737" ph="UPDATE `projects`... " />
+            <marker date="1521800063000" expanded="true" signature="11491:11599" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="12111:12189" ph="SELECT * FRO... projects" />
+            <marker date="1521800063000" expanded="true" signature="12515:12528" ph="INSERT INTO `skills`... " />
+            <marker date="1521800063000" expanded="true" signature="12515:12590" ph="INSERT INTO `contact`... " />
+          </folding>
         </state>
       </provider>
     </entry>

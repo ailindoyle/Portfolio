@@ -6,10 +6,9 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$row = getHomeInfo($db);
+$homeInfo = getHomeInfo($db);
 
-//$featuredRow = getFeaturedProjects($db);
-
+$featuredRow = getFeaturedProjects($db);
 
 ?>
 
@@ -61,14 +60,14 @@ $row = getHomeInfo($db);
 <div class="hero">
     <div class="main container">
         <div class="hero-box description">
-            <h1><?php echo $row['headerTop']?></h1>
-            <h3><?php echo $row['headerBottom']?></h3>
+            <h1><?php echo $homeInfo['headerTop']?></h1>
+            <h3><?php echo $homeInfo['headerBottom']?></h3>
         </div>
     </div>
 </div>
 <div class="summary">
     <div class="container">
-        <p><?php echo $row['summary']?></p>
+        <p><?php echo $homeInfo['summary']?></p>
     </div>
 </div>
 <div class="featured">
@@ -77,7 +76,7 @@ $row = getHomeInfo($db);
             <h2>FEATURED PROJECTS</h2>
         </div>
         <div>
-<!--            --><?php //echo displayFeaturedProjects($featuredRow); ?>
+            <?php echo displayFeaturedProjects($featuredRow); ?>
         </div>
     </div>
 </div>
