@@ -332,6 +332,44 @@ function displayProjects(array $portfolioInfo) :string {
     return $result;
 }
 
+
+/**
+ * Creates form in about admin page for each skill in the skills table of portfolio db
+ *
+ * @param array $skillsRow each row of the table as individual skill includes data required by a tags in html
+ * @return string returns string that defines html table with edit and delete buttons
+ */
+function createProjectForm(array $projectItem) :string {
+    $result = ' ';
+    foreach ($projectItem as $project) {
+        $result .= "<form method='post' action='portfolio_manage.php'>
+            <tr>
+                <td>
+                    " . $project['projectDescription'] . "
+                </td>
+                <td>
+                    " . $project['link'] . "
+                </td>
+                <td>
+                    " . $project['imageSource'] . "
+                </td>
+                <td>
+                    " . $project['alternativeText'] . "
+                </td>
+                <td>
+                    <input type='submit' name='edit' value='Edit'>
+                    <input type='submit' name='delete' value='Delete'>
+                    <input type='hidden' name='id' value='" . $project['id'] . "'>
+                </td>edit
+            </tr>
+        </form>";
+    }
+    return $result;
+}
+
+
+
+
 /**
  * inserts new projects from portfolio admin form to projects table in database
  *

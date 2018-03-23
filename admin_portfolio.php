@@ -1,6 +1,7 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -32,33 +33,7 @@ $projectItem=$projectQuery->fetchAll();
                     <th>Alt Text</th>
                     <th>Operations</th>
                 </tr>
-                <?php
-                foreach ($projectItem as $project) {
-                    ?>
-                    <form method="post" action="portfolio_manage.php">
-                        <tr>
-                            <td>
-                                <?php echo $project['projectDescription']; ?>
-                            </td>
-                            <td>
-                                <?php echo $project['link']; ?>
-                            </td>
-                            <td>
-                                <?php echo $project['imageSource']; ?>
-                            </td>
-                            <td>
-                                <?php echo $project['alternativeText']; ?>
-                            </td>
-                            <td>
-                                <input type="submit" name="edit" value="Edit">
-                                <input type="submit" name="delete" value="Delete">
-                                <input type="hidden" name="id" value="<?php echo $project['id']; ?>">
-                            </td>
-                        </tr>
-                    </form>
-                    <?php
-                }
-                ?>
+                <?php echo createProjectForm($projectItem);?>
             </table>
         <br><h3>ADD PROJECT</h3>
         <form method="post" action="portfolio_insert.php">
