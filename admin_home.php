@@ -1,23 +1,14 @@
 <?php
 
 include 'settings.php';
+require 'functions.php';
 
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$query = $db->prepare("SELECT * FROM `home` ORDER BY `dateAdded` DESC LIMIT 1");
+$row = getHomeInfo($db);
 
-$query->execute();
-$row=$query->fetch();
-
-$headerTop = $row['headerTop'];
-$headerBottom = $row['headerBottom'];
-$summary = $row['summary'];
-
-$featuredQuery = $db->prepare("SELECT * FROM `projects` WHERE `deleted` = 0");
-
-$featuredQuery->execute();
-$featuredRow = $featuredQuery->fetchAll();
+$featuredRow = getPortfolioInfo($db);
 
 ?>
 
@@ -35,11 +26,11 @@ $featuredRow = $featuredQuery->fetchAll();
         <h2>HOME</h2>
         <form method="post" action="home_insert.php">
             Header Top:<br>
-            <input type="text" name="headerTop" value="<?php echo $headerTop?>"><br>
+            <input type="text" name="headerTop" value="<?php echo $row['headerTop']?>"><br>
             Header Bottom:<br>
-            <input type="text" name="headerBottom" value="<?php echo $headerBottom?>"><br>
+            <input type="text" name="headerBottom" value="<?php echo $row['headerBottom']?>"><br>
             Summary:<br>
-            <input type="text" name="summary" value="<?php echo $summary?>"><br><br>
+            <input type="text" name="summary" value="<?php echo $row['summary']?>"><br><br>
             <input type="submit" value="Save">
         </form>
     </div>
@@ -87,7 +78,10 @@ $featuredRow = $featuredQuery->fetchAll();
         </table>
     </div>
     <div class="container">
-        <br><br><a href="admin.php">&#171; Back to list</a><br><br>
+        <br><br><a href="admin.php">&#171; Back to list</a>
+    </div>
+    <div class="container">
+        <br><br><a href="index.php">&#171; Back to portfolio</a><br><br>
     </div>
 </body>
 </html>

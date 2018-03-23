@@ -32,10 +32,10 @@ $row=$projectQuery->fetchAll();
                     <th>Alt Text</th>
                     <th>Operations</th>
                 </tr>
-                <form method="post" action="portfolio_manage.php">
-                    <?php
-                    foreach ($row as $project) {
-                        ?>
+                <?php
+                foreach ($row as $project) {
+                    ?>
+                    <form method="post" action="portfolio_manage.php">
                         <tr>
                             <td>
                                 <?php echo $project['projectDescription']?>
@@ -55,10 +55,10 @@ $row=$projectQuery->fetchAll();
                                 <input type="hidden" name="id" value="<?php echo $project['id']?>">
                             </td>
                         </tr>
-                        <?php
-                        }
-                        ?>
-                </form>
+                    </form>
+                    <?php
+                }
+                ?>
             </table>
         <br><h3>ADD PROJECT</h3>
         <form method="post" action="portfolio_insert.php">
@@ -74,7 +74,10 @@ $row=$projectQuery->fetchAll();
         </form>
     </div>
     <div class="container">
-        <br><br><a href="admin.php">&#171; Back to list</a><br><br>
+        <br><br><a href="admin.php">&#171; Back to list</a>
+    </div>
+    <div class="container">
+        <br><br><a href="index.php">&#171; Back to portfolio</a><br><br>
     </div>
 </body>
 </html>

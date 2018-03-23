@@ -1,3 +1,15 @@
+<?php
+
+include 'settings.php';
+require 'functions.php';
+
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$row = getContactInfo($db);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,35 +24,35 @@
     <div class="menu">
         <ul class="navigation">
             <li>
-                <a href="index.html">HOME</a>
+                <a href="index.php">HOME</a>
             </li>
             <li>
-                <a href="about.html">ABOUT</a>
+                <a href="about.php">ABOUT</a>
             </li>
             <li>
-                <a href="portfolio.html">PORTFOLIO</a>
+                <a href="portfolio.php">PORTFOLIO</a>
             </li>
             <li class="current">
-                <a href="contact.html">CONTACT</a>
+                <a href="contact.php">CONTACT</a>
             </li>
         </ul>
         <div class="dropdown">
             <div class="home">
-                <a href="index.html">HOME</a>
+                <a href="index.php">HOME</a>
             </div>
             <div class="about">
-                <a href="about.html">ABOUT</a>
+                <a href="about.php">ABOUT</a>
             </div>
             <div class="portfolio">
-                <a href="portfolio.html">PORTFOLIO</a>
+                <a href="portfolio.php">PORTFOLIO</a>
             </div>
             <div class="contact current">
-                <a href="contact.html">CONTACT</a>
+                <a href="contact.php">CONTACT</a>
             </div>
         </div>
     </div>
     <div class="logo">
-        <a href="index.html"><img src="images/CD-logo.png" alt="Logo"/></a>
+        <a href="index.php"><img src="images/CD-logo.png" alt="Logo"/></a>
     </div>
 </header>
 <div class="banner">
@@ -55,8 +67,8 @@
 <div class="contact-info">
     <div class="container">
         <div class="contact">
-            <h2>For any questions or to hire me drop me an email at the address below, or find me on LinkedIn or Twitter:</h2>
-            <h2>caitlin.doyle@mobile-life.com</h2>
+            <h2><?php echo $row['description']?></h2>
+            <h2><?php echo $row['email']?></h2>
             <ul class="social-media">
                 <li>
                     <a href="https://www.linkedin.com/in/ailin-doyle-304abbb0/" target="_blank"><img src="images/icons8-linkedin-48.png" alt="LinkedIn"/></a>
@@ -73,7 +85,7 @@
         <div class="contact-details">
             <div class="hire-link">
                 <button type="button">
-                    <a href="contact.html">Hire Me</a>
+                    <a href="contact.php">Hire Me</a>
                 </button>
             </div>
             <div class="footer-contact">
@@ -88,6 +100,9 @@
                         <a href="https://twitter.com/ailinrdoyle" target="_blank"><img src="images/icons8-twitter-48.png" alt="Twitter"/></a>
                     </li>
                 </ul>
+            </div>
+            <div class="admin">
+                <a href="login.php">Admin</a>
             </div>
         </div>
     </div>

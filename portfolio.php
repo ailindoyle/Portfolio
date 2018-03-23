@@ -1,3 +1,15 @@
+<?php
+
+include 'settings.php';
+require 'functions.php';
+
+$db = new PDO($dsn, $user);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+//$row = getPortfolioInfo($db);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,35 +24,35 @@
     <div class="menu">
         <ul class="navigation">
             <li>
-                <a href="index.html">HOME</a>
+                <a href="index.php">HOME</a>
             </li>
             <li>
-                <a href="about.html">ABOUT</a>
+                <a href="about.php">ABOUT</a>
             </li>
             <li class="current">
-                <a href="portfolio.html">PORTFOLIO</a>
+                <a href="portfolio.php">PORTFOLIO</a>
             </li>
             <li>
-                <a href="contact.html">CONTACT</a>
+                <a href="contact.php">CONTACT</a>
             </li>
         </ul>
         <div class="dropdown">
             <div class="home">
-                <a href="index.html">HOME</a>
+                <a href="index.php">HOME</a>
             </div>
             <div class="about">
-                <a href="about.html">ABOUT</a>
+                <a href="about.php">ABOUT</a>
             </div>
             <div class="portfolio current">
-                <a href="portfolio.html">PORTFOLIO</a>
+                <a href="portfolio.php">PORTFOLIO</a>
             </div>
             <div class="contact">
-                <a href="contact.html">CONTACT</a>
+                <a href="contact.php">CONTACT</a>
             </div>
         </div>
     </div>
     <div class="logo">
-        <a href="index.html"><img src="images/CD-logo.png" alt="Logo"/></a>
+        <a href="index.php"><img src="images/CD-logo.png" alt="Logo"/></a>
     </div>
 </header>
 <div class="full-portfolio">
@@ -50,24 +62,7 @@
                 <h2>PROJECTS</h2>
             </div>
             <div>
-                <div class="project-links col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/test_form/" target="_blank"><img src="images/testform_tile.png" alt="Test Form"></a>
-                        <p>Project: Test Form.<br>The first piece of code I wrote of Mayden Academy. This is a test form and test table.</p>
-                    </div>
-                </div>
-                <div class="project-links col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/jumbotron/" target="_blank"><img src="images/jumbotron_tile.png" alt="Jumbotron"></a>
-                        <p>Project: Jumbotron.<br>First attempt at page size responsiveness and displaying items inline.</p>
-                    </div>
-                </div>
-                <div class="project-links col-3 tb-col-2 mb-col-1">
-                    <div class="project">
-                        <a href="https://dev.maydenacademy.co.uk/students/2018/caitlin/pilot_shop/" target="_blank"><img src="images/pilotshop_tile.png" alt="Pilot Shop"></a>
-                        <p>Project: PilotShop.<br>First attempt at responsiveness in number of items on a line and hover features.</p>
-                    </div>
-                </div>
+<!--                --><?php //echo displayProjects($row); ?>
             </div>
         </div>
     </div>
@@ -77,7 +72,7 @@
         <div class="contact-details">
             <div class="hire-link">
                 <button type="button">
-                    <a href="contact.html">Hire Me</a>
+                    <a href="contact.php">Hire Me</a>
                 </button>
             </div>
             <div class="footer-contact">
@@ -92,6 +87,9 @@
                         <a href="https://twitter.com/ailinrdoyle" target="_blank"><img src="images/icons8-twitter-48.png" alt="Twitter"/></a>
                     </li>
                 </ul>
+            </div>
+            <div class="admin">
+                <a href="login.php">Admin</a>
             </div>
         </div>
     </div>
