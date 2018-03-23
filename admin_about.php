@@ -6,7 +6,7 @@ require 'functions.php';
 $db = new PDO($dsn, $user);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$row = getAboutInfo($db);
+$aboutInfo = getAboutInfo($db);
 
 $skillsRow = getSkills($db);
 
@@ -26,11 +26,11 @@ $skillsRow = getSkills($db);
         <h2>ABOUT</h2>
         <form method="post" action="about_main_insert.php">
             Picture:<br>
-            <input type="text" name="photoSource" value="<?php echo $row['photoSource']?>"><br>
+            <input type="text" name="photoSource" value="<?php echo $aboutInfo['photoSource']?>"><br>
             Alternative Image Text:<br>
-            <input type="text" name="photoAlt" value="<?php echo $row['photoAlt']?>"><br>
+            <input type="text" name="photoAlt" value="<?php echo $aboutInfo['photoAlt']?>"><br>
             Description:<br>
-            <input type="text" name="description" value="<?php echo $row['description']?>"><br><br>
+            <input type="text" name="description" value="<?php echo $aboutInfo['description']?>"><br><br>
             <input type="submit" value="Save">
         </form>
     </div>

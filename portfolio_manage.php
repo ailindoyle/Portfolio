@@ -8,8 +8,6 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 deleteProject($db, $_POST);
 
-redirectIfStuck ($_POST);
-
 $singleProject = getSingleProject($db, $_POST);
 
 ?>

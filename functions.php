@@ -110,7 +110,7 @@ function insertAboutToDb($db, $postData) {
  * @return array returns all skills excluding deleted
  */
 function getSkills($db) :array {
-    $skillsQuery = $db->prepare("SELECT `imageSource`, `alternative` FROM `skills` WHERE `deleted` = 0");
+    $skillsQuery = $db->prepare("SELECT `id`, `skillName`, `imageSource`, `alternative` FROM `skills` WHERE `deleted` = 0");
     $skillsQuery->execute();
     return $skillsQuery->fetchAll();
 }
@@ -179,26 +179,6 @@ function insertSkill($db, $postData) {
 }
 
 /**
- * edits skill using form in manage skills
- *
- * @param $db portfolio database
- * @param $postData manage skills form post data placeholder
- */
-function editSkill($db, $postData) {
-
-    if ($postData['id'] != NULL) {
-        $updateQuery = $db->prepare("UPDATE `skills` SET `skillName` = :skillName, `imageSource` = :imageSource, `alternative` = :alternative WHERE `id` = :id");
-        $updateQuery->bindParam(':id', $postData['id']);
-        $updateQuery->bindParam(':skillName', $postData['skillName']);
-        $updateQuery->bindParam(':imageSource', $postData['imageSource']);
-        $updateQuery->bindParam(':alternative', $postData['alternative']);
-
-        $updateQuery->execute();
-
-    }
-}
-
-/**
  * deletes skill from skills table by changing value from 0 to 1
  *
  * @param $db portfolio database
@@ -206,15 +186,13 @@ function editSkill($db, $postData) {
  */
 function deleteSkill($db, $postData) {
 
-    if ($postData['delete'] != NULL && $postData['id'] != NULL) {
-        $deleteQuery = $db->prepare("UPDATE `skills` SET `deleted` = 1 WHERE `id` = :id");
-        $deleteQuery->bindParam(':id', $postData['id']);
+    $deleteQuery = $db->prepare("UPDATE `skills` SET `deleted` = 1 WHERE `id` = :id");
+    $deleteQuery->bindParam(':id', $postData['id']);
 
-        $deleteQuery->execute();
+    $deleteQuery->execute();
 
-        header('Location: admin_about.php');
-        exit();
-    }
+    header('Location: admin_about.php');
+    exit();
 
 }
 
@@ -226,11 +204,32 @@ function deleteSkill($db, $postData) {
  * @return mixed returns data from row of id for editing
  */
 function getSingleSkill($db, $postData) {
-    $fetchQuery = $db->prepare("SELECT `imageSource`, `alternative` FROM `skills` WHERE `id` = :id");
+    $fetchQuery = $db->prepare("SELECT `id`, `skillName`, `imageSource`, `alternative` FROM `skills` WHERE `id` = :id");
     $fetchQuery->bindParam(':id', $postData['id']);
     $fetchQuery->execute();
     return $fetchQuery->fetch();
 }
+
+
+/**
+ * edits skill using form in manage skills
+ *
+ * @param $db portfolio database
+ * @param $postData manage skills form post data placeholder
+ */
+function editSkill($db, $postData) {
+
+    $updateQuery = $db->prepare("UPDATE `skills` SET `skillName` = :skillName, `imageSource` = :imageSource, `alternative` = :alternative WHERE `id` = :id");
+    $updateQuery->bindParam(':id', $postData['id']);
+    $updateQuery->bindParam(':skillName', $postData['skillName']);
+    $updateQuery->bindParam(':imageSource', $postData['imageSource']);
+    $updateQuery->bindParam(':alternative', $postData['alternative']);
+
+    $updateQuery->execute();
+
+}
+
+
 
 
 ///////////////////// PORTFOLIO PAGE CONTENT MANAGEMENT FUNCTIONS /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -328,21 +327,7 @@ function deleteProject($db, $postData) {
 }
 
 /**
- * redirects back to admin page if stuck
- *
- * @param $postData project admin form post data placeholder
- */
-function redirectIfStuck ($postData) {
-
-    if ($postData['edit'] == NULL || $postData['id'] == NULL) {
-        header('Location: admin.php');
-        exit();
-    }
-
-}
-
-/**
- * populates single into form for editing using id number
+ * gets single project from db
  *
  * @param $db portfolio database
  * @param $postData edit project admin form post data placeholder
@@ -352,7 +337,7 @@ function getSingleProject($db, $postData) {
     $fetchQuery = $db->prepare("SELECT `id`, `projectDescription`, `link`, `imageSource`, `alternativeText` FROM `projects` WHERE `id` = :id");
     $fetchQuery->bindParam(':id', $postData['id']);
     $fetchQuery->execute();
-    return $fetchQuery->fetch();
+    return $fetchQuery->fetchAll();
 }
 
 
