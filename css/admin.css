@@ -1,0 +1,18 @@
+a {
+    color: #36494d;
+}
+
+form {
+    resize: vertical;
+}
+
+input[type=text] {
+    width: 50%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #36494d;
+    text-align: left;
+    word-wrap: break-word;
+}
